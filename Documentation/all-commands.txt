@@ -1,0 +1,3219 @@
+Quake 2 Console Commands
+
+
+Note:  This list was copied entirely from Planetquake.com.
+
+Abstract
+Author: JakFrost
+Email: jakfrost@planetquake.com
+Web Site: http://www.planetquake.com/console/
+Created: December 26, 1997
+Last Modified: December 3, 1998
+Based On: Quake 2 v3.20
+Source: http://www.planetquake.com/console/commands/quake_2.html
+Copyright 1997, 1998 JakFrost; All Rights Reserved
+
+This is the complete list of console commands, console variables, and command line parameters for Quake 2. All console commands and variables are identified, documented, tagged, and classified. This document has been designed to help out all those people who want to customize the game to their liking.
+
+Index
+Introduction
+Questions
+Corrections
+The Key
+Fields
+Commands
+Variables
+Console Commands List
+Credits and Thanks
+Version Information
+Legal
+Copyright
+License
+Trademarks and Servicemarks
+Warranty Disclaimer
+1. Introduction
+I decided to write this document because a lot of people were curious about all of those console commands. Now this document has become the ultimate reference to console commands with each command and variable having an explanation. I hope that this document will benefit a lot of people in the use of the Quake 2 console.
+
+1.1. Questions
+If you have any questions regarding console commands or console variables please do not contact me because I don't have the time to answer them. If you want to find out more about what a certain console command does or what it could be used for the go ahead and experiment with that console command on your own until you can answer your own questions. I don't have the time nor the patience to answer any technical support questions. If you have a problem then please don't ask me how to fix it because I won't help you. Basically, if you have a problem with something then solve the problem on your own and do the necessary work to answer your own questions do not send me any emails because I will not read them.
+
+1.2. Corrections
+If you are reading this document and you find any errors, please contact me and tell me exactly where you found the error. I appreciate any corrections sent in because I want to make this document as accurate as possible. Any person who sends me corrections about console commands or variables will be acknowledged.
+
+2. The Key
+Below there are explanations to all of the different fields which are used to describe each command. It is good to know what the information in each field contains and refers to. The fields that I have used to describe each command and variable are a way of standardizing information among each command and to make sure that all of the information is given in an orderly fashion.
+
+I have also taken upon myself to classify all of those console commands and console variables. These classifications are in no way related to how the game feels about the various types of commands and variables. The game only distinguishes between commands and variables. The names of each class are only meant to identify the different type of a command or variable, and give some insight into it's syntax and what type of parameters it accepts. Basically if a user knows that a given variable is classified as a toggle, he won't try to use negative numbers or fractions as input, or if a command is classified as an operation he will know not to use any parameters. These classifications are just here to help you with the syntax recognition and to remove unnecessary syntax fields.
+
+2.1. Fields
+Type:
+This field appears for all commands and variables. The information in this field classifies the command or variable based on it's syntax. The inclusion of this field also allows for the shortening of this document by specifying one syntax for a whole class of commands or variables and not having to display the identical syntax for each command or variable. Further explanation about all of the different types of commands and variables that have been classified is included in the section below.
+Syntax:
+This field only appears for the class of function commands since each of those commands has it's own syntax. It displays the parameters that the command accepts and any other special characters. The convention of using words in parenthesis, i.e. (filename), designates that a single value should be specified which is described by the phrase inside the parenthesis, i.e. base1.bsp.
+Default:
+This field only appears for the variables. It displays the default value that is used by the game when it is started for the first time. The information in this field displays the default value for any given variable which can be referenced when it is necessary to restore that variable to it's original setting.
+Description:
+This field appears for all commands and variables. It displays a short description of the command or variable. This is just a reference field for a quick glance at what the command or variable does. I decided to write the sentences in this field as if grouped with an invisible prefix which should be appended to the sentence while reading this field. For commands the prefix would be "This command will...", for variables the prefix would be "This variable holds information about...", or "This variable will..." for toggle variables. It is better to omit this prefix in the actual description to save space and to avoid repeating the same part of the sentence over and over.
+Notes:
+This field appears for some commands and variables. It displays a long, detailed description of the command or variable. Usually a lot of background information is displayed in this field if the command or variable has some special functions or special syntax is necessary. This is to be considered a supplement to the Description: field where longer explanations should be provided.
+Values:
+This field only appears for the class of toggle variables. It displays all of the possible settings for a variable if there are more than the usual 0 and 1. This is an important field because it identifies all settings for that toggle variable.
+Example:
+This field only appears for the class of function commands since each of those commands has it's own syntax. It displays some examples of how the syntax should be used. For some commands this field is very necessary because some function commands have a very weird syntax.
+2.2. Commands
+Action:
+An action command performs an action when the +action part of the command is executed and terminates that action when the -action part of the command is executed. When an action command is bound to a key, the +action is executed when the key is pressed, and the -action is executed when the key is released. The default syntax for an action is '+command' or '-command'. The syntax field is skipped for all action commands.
+Function:
+A function command performs a single function based on the parameters included for that operation. A function usually has extra parameters and they are usually necessary for proper execution. The default syntax for a function is 'command (parameter)'. The syntax field is present for all function commands since each one has it's own unique syntax.
+Operation:
+An operation command performs a single function in the game every time the command is executed. It does not use any parameters. The default syntax for an operation is 'command'. The syntax field is skipped for all operation commands.
+2.3. Variables
+Bitmap:
+A bitmap variable is able to toggle more than one feature by using a single value. The way that a bitmap variable works is that a value is assigned to each bit. Each bit is like a toggle, only being able to be set to an on and off state. To turn on the desired features all the values representing individual bits are added together. So if you want to turn on the features which have values of 4, 8, 32, 256, you would set the variable to the sum of these values which is 300. The default syntax for a bitmap variable is 'variable (value)'. Allowable values for a bitmap variable include integers only.
+Command Line Parameter:
+A command line parameter is a variable which is set from a command line. The reason for setting a variable from the command line, is that some variables are write protected once the game starts and cannot but changed. Command line parameters are usually used to enable or disable a handful of features before loading up the game. The default syntax is 'quake2.exe +set variable (value)'.
+Register:
+A register variable is able to store any type of numeric information. Register variables are used for numeric data which does not have clearly defined boundaries. The default syntax for a register variable is 'variable (value)'. Allowable values for a register variable include integers, fractions, and negative values.
+String:
+A string variable is able to store any type of text information. The default syntax for a string variable is 'variable "(text)"'. Allowable values for a string variable include all numbers and all text characters.
+Toggle:
+A toggle variable is able to turn a feature on, off, or set it to an alternative setting. The values for a toggle are usually only 0 and 1. Sometimes there are alternative settings for a toggle, in which case subsequent numbers are used such as 2, 3, 4, and so on. The default syntax is 'variable (value)'. Allowable values for a toggle variable include integers only in increments of 1.
+3. Console Commands List
++attack
+Type: Action
+Description: When active the player is firing the current weapon.
+
++back
+Type: Action
+Description: When active the player is moving backwards.
+
++forward
+Type: Action
+Description: When active the player is moving forwards.
+
++klook
+Type: Action
+Description: When active the keyboard keys bound to +forward and +back serve as +lookup and +lookdown.
+
++left
+Type: Action
+Description: When active the player is turning left.
+
++lookdown
+Type: Action
+Description: When active the player is looking down.
+
++lookup
+Type: Action
+Description: When active the player is looking up.
+
++mlook
+Type: Action
+Description: When active the mouse movement forward serves as +lookup and mouse movement backward as +lookdown.
+
+Note: The function of the forward and backward movement of the mouse can be reversed with a negative value in the m_pitch variable.
+
++movedown
+Type: Action
+Description: When active the player is moving downward in liquids, on a ladder, or is crouching on ground.
+
++moveleft
+Type: Action
+Description: When active the player is strafe moving, side stepping to the left.
+
++moveright
+Type: Action
+Description: When active the player is strafe moving, side stepping to the right.
+
++moveup
+Type: Action
+Description: When active the player is moving up in liquids, on a ladder, or jumping.
+
++right
+Type: Action
+Description: When active the player is turning right.
+
++speed
+Type: Action
+Description: When active the player is running.
+
++strafe
+Type: Action
+Description: When active the +left and +right functions are changed to +moveleft and +moveright.
+
++use
+Type: Action
+Description: Unused.
+
+Note: This command has been left intact but still unused to allow future additions to the game engine where a key press will be needed to active objects in the world, instead of just walking or pushing them. Similar to other games where you have to press a key to open a door or activate a switch.
+
+adr0
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr1
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr2
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr3
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr4
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr5
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr6
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr7
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+adr8
+Type: String
+Default: (none)
+
+Description: The server address for the entry in the address book.
+
+alias
+Type: Function
+Syntax:
+alias
+alias (name) "(commands)"
+Description: Used to create a reference to a command or list of commands.
+
+Note: When used without parameters, it will display all current aliases. To create an alias which executes multiple commands, it is necessary to surround the commands with double-quotes and separate each command with a semicolon. An alias works like a command function since it cannot accept any parameters. Also, aliases are executed as if they were commands.
+
+Example:
+alias sayhi "say Hi foo!"
+alias jumpshot "+moveup;+attack;wait;-attack;-moveup"
+allow_download
+Type: Toggle
+Default: 0
+
+Description: Toggle the automatic downloading of game files.
+
+Note: This command can be used by both, the client and the server individually to prevent the automatic downloading of game files.
+
+allow_download_maps
+Type: Toggle
+Default: 1
+
+Description: Toggle the automatic downloading of map files to the client from the server.
+
+Note: This command can be used by both, the client and the server individually to prevent the automatic downloading of game files. Maps which are contained in .pak files will not be available for download because of copyright issues associated with the distribution of commercial addons.
+
+allow_download_models
+Type: Toggle
+Default: 1
+
+Description: Toggle the automatic downloading of model files.
+
+Note: This command can be used by both, the client and the server individually to prevent the automatic downloading of game files.
+
+allow_download_players
+Type: Toggle
+Default: 1
+
+Description: Toggle the automatic downloading of player skin files.
+
+Note: This command can be used by both, the client and the server individually to prevent the automatic downloading of game files.
+
+allow_download_sounds
+Type: Toggle
+Default: 1
+
+Description: Toggle the automatic downloading of sound files.
+
+Note: This command can be used by both, the client and the server individually to prevent the automatic downloading of game files.
+
+basedir
+Type: Command Line Parameter
+Default: .
+
+Description: The location of the directory where baseq2/ directory resides.
+
+Note: This variable might be used if the data files for Quake 2 are stored in a totally different directory, for example on a read-only mounted drive.
+
+bind
+Type: Function
+Syntax:
+bind (key)
+bind (key) "(commands)"
+Description: Assign a command or a set of commands to a key.
+
+Note: When the command is used with just the key name and without assigning any commands to it, it will display the command which is currently assigned to that key. To bind multiple commands to a key, enclose the commands in double-quotes and separate them with semi-colons. To bind to non-printable keys, use the key name. The escape, and ~ (tilde) keys can only be bound from an external configuration file.
+
+Key Name List: ESCAPE, F1-F12, PAUSE, BACKSPACE, TAB, SEMICOLON, ENTER, SHIFT, CTRL, ALT, SPACE, INS, HOME, PGUP, DEL, END, PGDN, UPARROW, DOWNARROW, LEFTARROW, RIGHTARROW, KP_SLASH, KP_MINUS, KP_PLUS, KP_ENTER, KP_5, KP_UPARROW, KP_LEFTARROW, KP_RIGHTARROW, KP_DOWNARROW, KP_HOME, KP_END, KP_PGUP, KP_PGDN, KP_INS, KP_DEL, MOUSE1-MOUSE3, AUX1-AUX32, JOY1-JOY4, MWHEELUP, MWHEELDOWN.Example:
+bind h "say Hi Foo!"
+bind mouse1 "+attack;+moveup;wait;-moveup;-attack;echo Foo!"
+bindlist
+Type: Operation
+Description: Displays all key and button bindings.
+
+bob_pitch
+Type: Register
+Default: 0.002
+
+Description: The amount of movment that the player's screen moves up and down while in motion.
+
+bob_roll
+Type: Register
+Default: 0.002
+
+Description: The amount of movment that the player's screen moves left and right while in motion.
+
+bob_up
+Type: Register
+Default: 0.005
+
+Description: The amount of time before the player's screen starts moving.
+
+cd
+Type: Function
+Syntax:
+cd (command)
+cd (command) (parameter)
+Description: Control the functions of playing CD music.
+
+List:
+close - Close the CD-ROM drive door.
+eject - Eject the CD from the drive.
+info - Display the number of music tracks on the CD and the current status.
+loop (track) - Play the same track over and over.
+off - Disable CD music.
+on - Enable CD music.
+pause - Pause the current playback.
+play (track) - Play the track.
+remap - Display the remapped order of tracks.
+remap (track) (track) ... (track) - Change the playback order of tracks.
+reset - Reset the CD functions.
+resume - Resume play after a pause.
+stop - Stop the current playback.
+Note: For the command to be available the CD-ROM drive has to be idle at the time that Quake 2 starts, or else this command will be disabled.
+
+Example:
+cd info
+cd play 3
+cd remap 4 5 1 2 7 8
+cd remap
+cd_loopcount
+Type: Register
+Default: 4
+
+Description: The number of times that the looping track will play.
+
+cd_looptrack
+Type: Register
+Default: 11
+
+Description: The number of the music track designated to loop.
+
+cd_nocd
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of CD music.
+
+cddir
+Type: Command Line Parameter
+Default: z:\install\data
+
+Description: The location of the game files on the CD-ROM.
+
+Note: The game will detect the CD-ROM drive letter automatically and will append the appropriate path by itself. If it happens that the computer has more than one CD-ROM drive and the game detects the wrong drive this variable might be set to direct the game to the right CD-ROM drive and path.
+
+centerview
+Type: Operation
+Description: Center the player's view.
+
+changing
+Type: Operation
+Description: Informs the client of an upcoming map change.
+
+Note: This is an internal command used between the client and server.
+
+cheats
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of cheat codes.
+
+cl_anglespeedkey
+Type: Register
+Default: 1.5
+
+Description: The multiplier value for the yaw and roll axes.
+
+Note: While the +speed command is enabled or the cl_run toggle is enabled the values of cl_forwardspeed, cl_sidespeed, and cl_upspeed are multiplied by this value.
+
+cl_autoskins
+Type: Toggle
+Default: 0
+
+Description: * Disabled.
+
+cl_blend
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of palette blending effects.
+
+Note: The palette blending effect is used while being injured, using a powerup, or under water. It might be beneficial to disable this effect to see clearly in water, but then if the player is being injured he won't know it.
+
+cl_entities
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of entities.
+
+cl_footsteps
+Type: Toggle
+Default: 1
+
+Description: Toggle the footstep sounds.
+
+cl_forwardspeed
+Type: Register
+Default: 200
+
+Description: The maximum forward and backward movement speed.
+
+cl_gun
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of the gun.
+
+cl_lights
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of dynamic lighting.
+
+cl_maxfps
+Type: Register
+Default: 90
+
+Description: The maximum number of packets-per-second the server should send to the client to cap the frames-per-second rate.
+
+cl_nodelta
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of delta network packet compression.
+
+cl_noskins
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of custom skins on other players.
+
+Values:
+0 - Enable the use of skins.
+1 - Disable the use of skins.
+2 - Enable the use of skins but do not download new skins from the server.
+cl_particles
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of partices.
+
+cl_pitchspeed
+Type: Register
+Default: 150
+
+Description: The constant movement speed for the up and down axis.
+
+Note: This variable determines the speed at which the player's screen moves up and down while using the keyboard keys. The reason for this is that the keyboard does not have sensetivity states only an off and on state.
+
+cl_predict
+Type: Toggle
+Default: 1
+
+Description: Toggle prediction of entities between network packets.
+
+cl_run
+Type: Toggle
+Default: 0
+
+Description: Toggle automatic running.
+
+cl_showmiss
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of missed predictions.
+
+cl_shownet
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of latency information for network packets.
+
+cl_sidespeed
+Type: Register
+Default: 200
+
+Description: The maximum left and right movement speed.
+
+cl_stats
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of information for map statistics.
+
+cl_stereo
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of stereoscopic display mode.
+
+cl_stereo_separation
+Type: Register
+Default: 0.4
+
+Description: The seperation value between the left and right images in stereoscoptic mode.
+
+cl_testblend
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of test for pallet blending.
+
+cl_testentities
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of a test for entities.
+
+cl_testlights
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of a test for dynamic lighting.
+
+cl_testparticles
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of a test for particles.
+
+cl_timeout
+Type: Register
+Default: 120
+
+Description: The maximum time in seconds that the client will wait for a network packet before disconnecting.
+
+cl_upspeed
+Type: Register
+Default: 200
+
+Description: The maximum speed for up and down movment.
+
+cl_vwep
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of Visual Weapons on players.
+
+cl_yawspeed
+Type: Register
+Default: 140
+
+Description: The speed at which the player will turn while using a keyboard.
+
+Note: This variable determines the speed at which the player's screen moves left and right while using the keyboard keys. The reason for this is that the keyboard does not have sensetivity states only an off and on state.
+
+clear
+Type: Operation
+Description: Clear the console of all text.
+
+clientport
+Type: Register
+Default: 27901
+
+Description: The port that the client uses for receiving message from the server.
+
+cmd
+Type: Function
+Syntax:
+cmd (command)
+cmd (command) (parameters)
+Description: Send the command and/or parameters to the server.
+
+List:
+baselines (random number) (value) - Set up the initial values for spawning the player on the map.
+begin (random number) - Spawn the player on the map.
+configstrings (random number) (value) - Set up the initial configuration for connecting the client to the server.
+disconnect - Disconnect the client from the server.
+download (filename) - *Disabled. Download a file from the server.
+drop (item) - Drop an item from the inventory.
+fov (value)- Set the field-of-vision.
+gameversion - Display the date version of the game.
+give (item)- Give an item to the player.
+god - Toggle God mode.
+help - Display the score screen.
+info - Display server information.
+invdrop - Drop the currently selected item in the inventory.
+inven - Display the inventory screen.
+invnext - Select the next item in the inventory.
+invprev - Select the previous item in the inventory.
+invuse - Use the currently selected item from the inventory.
+kill - Make the player commit suicide.
+nextdl - *Unknown.
+noclip - Toggle the ability of the player to walk though walls and objects.
+notarget - Toggle the ability of the monsters to detect the player.
+putaway - Putaway any menu screen or inventory window.
+say (message) - Send a message to all the players on the server.
+say_team (message) - Send a message to all the players on the server who are on your team.
+use - Use an item which is in the player's inventory.
+wave (type)- Make the player character display a hand gesture to other players on the server.
+weapnext - Switch to the next weapon in the player's inventory.
+weapprev - Switch to the previous weapon in the player's inventory.
+Note: Some commands that the client uses do not need to be prefixed with cmd before sending them to the server. The function on this command is to allow the client to perform actions which require information from the server. This command is basically an interface between the client and the server, where the client asks the server if it can perform an action, and the server performs the action or rejects the request. This command is automatically used by the client internally, so it is never necessary to call this command unless performing some type of debugging.
+
+Example:
+cmd god
+cmd give all
+cmdlist
+Type: Operation
+Description: Display a list of all available commands.
+
+con_notifytime
+Type: Register
+Default: 3
+
+Description: The delay before console messages disappear from the screen.
+
+condump
+Type: Function
+Syntax: condump (filename)
+
+Description: Dump the console text to a text file.
+
+Note: It is not necessary to specify an extension to the (filename) since a .txt extension as appended automatically.
+
+Example: condump context
+
+connect
+Type: Function
+Syntax:
+connect (IP address)
+connect (IP address):(port)
+Description: Connect the client to a server.
+
+Note: It is usually not necessary to specify a (port) unless the server is running on a different port than 29710, which is the default port.
+
+Example:
+connect 123.123.123.123
+connect 123.123.123.123:27911
+coop
+Type: Toggle
+Default: 0
+
+Description: Toggle cooperative play.
+
+Note: In cooperative mode, the dmflags variable is disabled. Weapons will remain for all players to retrieve whereas other items will disappear when picked up.
+
+crosshair
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of the crosshair.
+
+Values:
+0 - Crosshair disabled.
+1 - X crosshair enabled.
+2 - Dot crosshair enabled.
+3 - Angle crosshair enabled.
+cvarlist
+Type: Operation
+Description: Display a list of all variables, their flags, and their values.
+
+Note: Each varaiable has a value and a state flag. If a variable has the value of "", then that variable is empty.
+
+List:
+* - Saved setting, will save changes to this variable between games by writing it in the config.cfg file.
+U - User variable, will show up in the output from the userinfo command or dumpuser command..
+S - Server variable, will show up in the output from the serverinfo command.
+L - Delayed function, will take action after a map change.
+- - Write protected, only changable upon launching of the game with a command line parameter.
+deathmatch
+Type: Toggle
+Default: 0
+
+Description: Toggle the deathmatch game mode.
+
+debuggraph
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the debug graph.
+
+dedicated
+Type: Command Line Parameter
+Default: 0
+
+Description: Set the game into dedicated server mode.
+
+Note: This variable will determine if the game will load with a graphical interface used for single-player game or for the client mode use for gaming. When the variable is set to 1 the game will load with a text-only interface with server functions only. This is beneficial because a dedicated server is more efficient than a listen server.
+
+demomap
+Type: Function
+Syntax: demomap (filename)
+
+Description: Plays back a demo.
+
+Note: The extension .bsp is appended to any (filename) which does not contain an extension. The default extension of a demo is .dm2. If any key is pressed during the playback of a demo the main menu is displayed.
+
+Example: demomap demo1.dm2
+
+developer
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of developer information.
+
+Note: There are a lot of game message which are not displayed, this variable will allow for a game developer to read all of the internal messages that the game displays. A lot of this information is necessary for debugging the game or just watching the internal processes that the game goes through.
+
+dir
+Type: Function
+Syntax:
+dir
+dir (relative path)/(filename mask)
+Description: Display a directory listing.
+
+Note: This command will display the files and directories of any directory on the hard disk. It is necessary to specify the location of the directory to be displayed using a relative path format. In a relative path the character . means current path, .. means parent path, and / or \ separates directories. It is also necessary to specify a filename mask which will determine what files are displayed. In a filemask the character ? substitutes for any single character, * substitutes for any number of characters. If the command is executed without parameters it will display the contents of the quake2/baseq2/ directory.
+
+Example:
+dir
+dir *.cfg
+dir ../*.*
+dir ..\*.*
+disconnect
+Type: Operation
+Description: Disconnects the client from the server.
+
+dmflags
+Type: Bitmap
+Default: 16
+
+Description: The options which determine deathmatch game settings.
+
+Values:
+1 - No Health.
+2 - No Powerups.
+4 - Weapons Stay.
+8 - No Falling Damage.
+16 - Instant Powerups.
+32 - Same Map.
+64 - Teams by Skin.
+128 - Teams by Model.
+256 - No Friendly Fire.
+512 - Spawn Farthest.
+1024 - Force Respawn.
+2048 - No Armor.
+4096 - Allow Exit.
+8192 - Infinite Ammo.
+16384 - Quad Drop.
+32768 - Fixed FOV.
+download
+Type: Function
+Syntax: download (filename)
+
+Description: This command will download any specified filename from the server.
+
+Example: download players/male/grunt.pcx
+
+drop
+Type: Function
+Syntax: drop (item)
+
+Description: Drop an item from the inventory.
+
+List:
+adrenaline - Adrenaline.
+airstrike marker - Airstrike Marker.
+ammo pack - Ammo Pack.
+ancient head - Ancient Head.
+bandolier - Bandoleer.
+bfg10k - BFG10K.
+blue key - Blue Key.
+bullets - 50 Bullets.
+chaingun - Chaingun.
+cells - 50 cells.
+commander's head - Commander's Head.
+data cd - Data CD.
+data spinner - Data Spinner.
+environment suit - Environment Suit.
+grenade launcher - Grenade Launcher.
+grenades - 5 Grenades.
+hyperblaster - HyperBlaster.
+invulnerability - Invulnerability.
+machinegun - Machinegun.
+power cube - Power Cube.
+power screen - Power Screen.
+power shield - Power Shield.
+pyramid key - Pyramid Key.
+quad damage - Quad Damage.
+railgun - Railgun.
+rebreather - Rebreather.
+red key - Red Key.
+rocket launcher - Rocket Launcher.
+rockets - 5 Rockets.
+security pass - Security Pass.
+shells - 10 Shells.
+shotgun - Shotgun.
+silencer - Silencer.
+slugs - 10 Slugs.
+super shotgun - Super Shotgun.
+Note: This only works in multiplayer games where instant powerups are disabled. Also, dropped items only stay on the map for 30-seconds, after that time they just disappear.
+
+Example:
+drop shotgun
+drop quad damage
+dumpuser
+Type: Function
+Syntax: dumpuser (userid)
+
+Description: Display user information.
+
+Note: This command will display all variables flagged with the U (user) flag, and their values.
+
+Example: dumpuser 0
+
+echo
+Type: Function
+Syntax: echo (text)
+
+Description: Display text to the console.
+
+Example: echo Hey Foo!
+
+error
+Type: Function
+Syntax: error "(text)"
+
+Description: Quit the game with an error message.
+
+Example: error "The Foo Overflowed"
+
+exec
+Type: Function
+Syntax: exec (filename)
+
+Description: Execute a console script file.
+
+Note: This is a very helpful command because it allows for the execution of multiple commands which are stored in text files and are used to setup the client or a server. The default extension for a console script is .cfg, but an extension of .rc is also in common use especially for player configuration scripts. The .rc extension was derived from Unix shell scripts which also share the same extension.
+
+Example: exec foo.rc
+
+filterban
+Type: Toggle
+Default: 1
+
+Description: Toggle the usage of the banlist.
+
+Values:
+0 - Allow only the addresses in the banlist to join the server.
+1 - Ban the addresses in the banlist from joining the server.
+fixedtime
+Type: Toggle
+Default: 0
+
+Description: Toggle display of all game frames.
+
+Note: If this variable is enabled the game will display all game frames thus slowing down the game in order to allow for the display of every frame. Normally the game will skip frames to keep the speed of the game constant.
+
+flood_msgs
+Type: Register
+Default: 4
+
+Description: The number of messages that a client has to send in order to be considered a flood.
+
+flood_persecond
+Type: Register
+Default: 4
+
+Description: The time in seconds in which the messages are send in order to be considered a flood.
+
+flood_waitdelay
+Type: Register
+Default: 10
+
+Description: The time in seconds that a client will not be able to send any more message to the server because of the flood.
+
+flushmap
+Type: Toggle
+Default: 0
+
+Description: Toggle the flushing of map during map changes.
+
+fov
+Type: Register
+Default: 90
+
+Description: The size of the player's peripheral vision.
+
+fraglimit
+Type: Register
+Default: 0
+
+Description: The score that is necessary for changing of maps.
+
+freelook
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of the forward and down movements into look up and look down.
+
+g_select_empty
+Type: Toggle
+Default: 0
+
+Description: Toggle the ability of players to select weapons without ammo.
+
+game
+Type: String
+Default: (none)
+
+Description: The alternative location for the baseq2/ directory.
+
+Note: This variable is used to inform Quake 2 to look for additional game information in the directory provided. This variable is used while playing different game modifications.
+
+gamedate
+Type: String
+Default: May 27 1998
+
+Description: The internal date of game .dll file.
+
+gamedir
+Type: String
+Default: none
+
+Description: The directory name where the game files are located when the server is running a custom game configuration.
+
+gamemap
+Type: Function
+Syntax: gamemap (filename)
+
+Description: Start the server with a new map.
+
+Note: The extension .bsp is appended to the (filename) when it does not include an extension.
+
+Example: gamemap base1
+
+gamename
+Type: String
+Default: baseq2
+
+Description: The internal name of the game .dll file.
+
+gameversion
+Type: Operation
+Description: *Disabled.
+
+Note: This command used to display the date version of the game.
+
+gender
+Type: String
+Default: male
+
+Description: The gender of the player.
+
+Note: This variable is necessary in order to display the proper death messages which might be gender related.
+
+Values:
+male - Male death messages displayed.
+female - Female death messages displayed.
+none - Neutral death messages displayed.
+gender_auto
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of automatic gender detection based on the player's model.
+
+give
+Type: Function
+Syntax:
+give (item)
+give (item) (amount)
+Description: Give an item to the player.
+
+Note: The amount parameter is only available when giving ammo and does not work for grenades. It is possible to take away items by giving a negative amount of an item.
+
+List:
+all - All items.
+ammo - Full ammo.
+armor - Full armor.
+health - Full health.
+weapons - All weapons.
+shells - 10 Shells.
+bullets - 50 Bullets.
+grenades - 5 Grenades.
+rockets - 5 Rockets.
+slugs - 10 Slugs.
+cells - 50 Cells.
+combat armor - 1 unit of Combat Armor.
+jacket armor - 1 unit of Jacket Armor.
+armor shard - Armor Shard.
+power screen - Power Screen.
+power shield - Power Shield.
+shotgun - Shotgun.
+super shotgun - Super Shotgun.
+machinegun - Machinegun.
+chaingun - Chaingun.
+grenade launcher - Grenade Launcher.
+rocket launcher - Rocket Launcher.
+hyperblaster - HyperBlaster.
+railgun - Railgun.
+bfg10k - BFG10K.
+adrenaline - Adrenaline.
+ammo pack - Ammo Pack.
+bandolier - Bandoleer.
+environment suit - Environment Suit.
+invulnerability - Invulnerability.
+quad damage - Quad Damage.
+rebreather - Rebreather.
+silencer - Silencer.
+airstrike marker - Airstrike Marker.
+ancient head - Ancient Head.
+blue key - Blue Key.
+commander's head - Commander's Head.
+data cd - Data CD.
+data spinner - Data Spinner.
+power cube - Power Cube.
+pyramid key - Pyramid Key.
+red key - Red Key.
+security pass - Security Pass.
+Example:
+give all
+give rocket launcher
+give shells
+give rockets 100
+gl_3dlabs_broken
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of alternative code for 3D Labs video drivers.
+
+Note: The drivers that 3D Labs release have some problems so this variable was developed to overcome those problems. Once the drivers are fixed this variable can be disabled.
+
+gl_allow_software
+Type: Toggle
+Default: 0
+
+Description: Toggle the emulation of missing OpenGL functions by the game software.
+
+gl_bitdepth
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of 16-bit textures.
+
+gl_clear
+Type: Toggle
+Default: 0
+
+Description: Toggle the clearing of the screen between frames.
+
+Note: This is only necessary when developing a map and it is necessary to clear extraneous screen information when floating outside of the map for example. This is also helpful when using the gl_lockpvs command.
+
+gl_cull
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of OpenGL culling functions.
+
+Note: The culling functions are used to remove certain map information which would not be rendered because it is covered by another object.
+
+gl_drawbuffer
+Type: String
+Default: GL_BACK
+
+Description: The name of the buffer that display information should be written to.
+
+gl_driver
+Type: String
+Default: 3dfxgl
+
+Description: The filename of the OpenGL .dll driver.
+
+gl_dynamic
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of dynamic lighting.
+
+gl_ext_compiled_vertex_array
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of a compiled vertex array.
+
+gl_ext_multitexture
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of multiple texture processors.
+
+gl_ext_palettedtexture
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of textures with their own color pallets.
+
+gl_ext_pointparameters
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of point parameter files.
+
+gl_ext_swapinterval
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of the swap interval between frames.
+
+gl_finish
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of gl_finish() function after each frame.
+
+Note: If this toggle is enabled the video card driver will send out a gl_finish() call at the end of each frame for proper timing.
+
+gl_flashblend
+Type: Toggle
+Default: 0
+
+Description: Toggle the blending of lights onto the environment.
+
+Note: If this toggle is enabled the lights will blend into a translucent ball of light.
+
+gl_lightmap
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of light map used for testing static lighting.
+
+Note: If this toggle is enabled all of the textures will be removed from the display and only the static lights will be shown.
+
+gl_lockpvs
+Type: Toggle
+Default: 0
+
+Description: Toggle the locking of the current PVS table.
+
+Note: If this toggle is enabled the game will lock the PVS table in the memory for the current location that the player is in and it will not let it be updated by the player's movement. The PVS table determines what parts of the map can be seen by the player and if they should be rendered. This variable is used by map makers to lock the PVS from a certain location and then move around to see what parts the game will render from that location and then determine where hint brushes should be placed to limit the rendering. It is helpful to enable the gl_clear command to avoid the hall of mirrors effect on the unrendered parts of the level.
+
+gl_log
+Type: Toggle
+Default: 0
+
+Description: Toggle the logging of all the OpenGL commands.
+
+Note: If this toggle is enabled a file called gl.log is produced with all of the OpenGL commands which were used by the game. Be careful about using this command since the size of the log file can grow quite large quick quickly.
+
+gl_mode
+Type: Toggle
+Default: 3
+
+Description: Toggle the screen resolution mode.
+
+Values:
+0 - 320 x 200
+1 - 400 x 300
+2 - 512 x 384
+3 - 640 x 480
+4 - 800 x 600
+5 - 960 x 720
+6 - 1024 x 768
+7 - 1152 x 864
+8 - 1280 x 960
+9 - 1600 x 1200
+gl_modulate
+Type: Register
+Default: 1
+
+Description: The brightness of a texture while it is being affected by dynamic lights.
+
+Note: If the value is less than 1 then the texture which on which the dynamic light is displayed will be darker than it's normal color. If the value is more than 1 then the texture will be brighter. This variable is mostly used to brighten up the lighting in the game without changing any gamma information.
+
+gl_monolightmap
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of a monochromic light map to test dynamic lighting.
+
+Note: If this toggle is enabled the wall textures will be removed from walls and replaced by a white texture. Also, all effects of dynamic lighting on different parts of the map will be displayed in a solid black color.
+
+gl_nobind
+Type: Toggle
+Default: 0
+
+Description: Toggle the binding of textures to triangles.
+
+gl_nosubimage
+Type: Toggle
+Default: 0
+
+Description: Toggle the usage of subimages for rendering.
+
+gl_particle_att_a
+Type: Register
+Default: 1
+
+Description: The value for the intensity of the particle A attributes.
+
+gl_particle_att_b
+Type: Register
+Default: 1
+
+Description: The value for the intensity of the particle B attributes.
+
+gl_particle_att_c
+Type: Register
+Default: 0
+
+Description: The value for the intensity of the particle C attributes.
+
+gl_particle_max_size
+Type: Register
+Default: 4
+
+Description: The maximum size for a rendered particle.
+
+gl_particle_min_size
+Type: Register
+Default: 1
+
+Description: The minimum size for a rendered particle.
+
+gl_particle_size
+Type: Register
+Default: 4
+
+Description: The default size for a rendered particle.
+
+gl_picmip
+Type: Register
+Default: 0
+
+Description: The dimensions of displayed textures.
+
+Note: The value of this variable will determine the dimensions of the textures which are displayed in the game. The displayed textures are shrunk by the formula 2^x where x is the value of this register. Setting this to a value which is larger than zero might provide performance increases on slow systems.
+
+gl_playermip
+Type: Toggle
+Default: 0
+
+Description: The dimensions of displayed player skins.
+
+Note: The value of this variable will determine the dimensions of the player skins which are displayed in the game. The displayed skins are shrunk by the formula 2^x where x is the value of this register. Setting this to a value which is larger than zero might provide performance increases on slow systems.
+
+gl_polyblend
+Type: Toggle
+Default: 1
+
+Description: Toggle pallet blending.
+
+Note: The pallet blending effect is used while being injured, using a powerup, or under water. It might be beneficial to disable this effect to see clearly in water, but then if the player is being injured he won't know it.
+
+gl_round_down
+Type: Toggle
+Default: 1
+
+Description: Toggle the rounding of texture sizes.
+
+Note: If this toggle is enabled textures which are not sized to the power of 2 will be enlarged to the next higher power of 2. Normally textures will be shrunk to the next lower power of 2. Enabling this toggle will make some textures sharper such as monster skins but will degrade performance.
+
+gl_saturatelighting
+Type: Toggle
+Default: 0
+
+Description: Toggle the saturation of all lights.
+
+gl_shadows
+Type: Toggle
+Default: 0
+
+Description: Toggle entity shadows.
+
+Note: This function is far from perfect. Shadows will all be cast in the same direction (angle 180 in reference to viewpos) from all entities, including ones that are emitting light.
+
+gl_showtris
+Type: Toggle
+Default: 0
+
+Description: This command toggles a map of the triangles that the engine is drawing for the current view. The edges of the triangles are shown in white and the faces are darkened.
+
+Note: This command is unable to be used on a 3Dfx card. You need to be using the default OpenGL driver.
+
+gl_skymip
+Type: Toggle
+Default: 0
+
+Description: Toggle the usage of mipmap information for the sky graphics.
+
+gl_swapinterval
+Type: Register
+Default: 1
+
+Description: The delay between frame buffer swaps.
+
+gl_texturealphamode
+Type: Toggle
+Default: default
+
+Description: The color mode for alpha-blended textures.
+
+Values:
+default - The default mode.
+GL_RGBA - Unknown.
+GL_RGBA2 - Unknown.
+GL_RGBA4 - Unknown.
+GL_RGBA8 - Unknown.
+GL_RGB5_A1 - Unknown.
+gl_texturemode
+Type: String
+Default: GL_LINEAR_MIPMAP_NEAREST
+
+Description: The texture drawing mode.
+
+Values:
+GL_NEAREST - This will enable nearest neighbor interpolation and will therefore appear similar to software Quake2 except with the added colored lighting.
+GL_LINEAR - This will enable linear interpolation and will appear to blend in objects that are closer than the resolution that the textures are set as.
+GL_NEAREST_MIPMAP_NEAREST - Nearest neighbor interpolation with mipmapping for bilinear hardware. Mipmapping will blend objects that are farther away than the resolution that they are set as.
+GL_LINEAR_MIPMAP_NEAREST - Linear interpolation with mipmapping for bilinear hardware.
+GL_NEAREST_MIPMAP_LINEAR - Nearest neighbor interpolation with mipmapping for trilinear hardware.
+GL_LINEAR_MIPMAP_LINEAR - Linear interpolation with mipmapping for trilinear hardware.
+gl_texturesolidmode
+Type: Toggle
+Default: default
+
+Description: The color mode for solid-blended textures.
+
+Values:
+default - The default mode.
+GL_RGB - Unknown.
+GL_RGB2 - Unknown.
+GL_RGB4 - Unknown.
+GL_RGB5 - Unknown.
+GL_RGB8 - Unknown.
+GL_R3_G3_B2 - Unknown.
+gl_triplebuffer
+Type: Toggle
+Default: 0
+
+Description: Toggle the usage of triple buffering for OpenGL cards.
+
+Note: If you are using a 3Dfx Voodoo2 card this toggle will automatically be set to 1 because these cards support triple buffering by default.
+
+gl_vertex_arrays
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of vertex arrays.
+
+gl_ztrick
+Type: Toggle
+Default: 0
+
+Description: Toggle the clearing of the z-buffer between frames.
+
+Note: If this toggle is enabled the game will not clear the z-buffer between frames. This will result in increased performance but might cause problems for some display hardware.
+
+god
+Type: Operation
+Description: Toggle god mode for the player.
+
+Note: When a player is in god mode he is indestructible, except for the teleportation death (telefrag), or if he issues the kill command. Also, players in god mode have a white aura effect around their character so you always know who's using this command.
+
+graphheight
+Type: Register
+Default: 32
+
+Description: The height in pixes of graphs.
+
+graphscale
+Type: Register
+Default: 1
+
+Description: The vertical scale of displayed information on graphs.
+
+Note: If this register is lower than 1 the data in the graphs will be shrunk, if higher than 1 the data will be enlarged.
+
+graphshift
+Type: Register
+Default: 0
+
+Description: The vertical shift of information on graphs.
+
+gun_model
+Type: Function
+Syntax:
+gun_model
+gun_model (filename)
+Description: Display a weapon model.
+
+Note: This command is primarily used to test the look of the weapon models and to allow the display of each frame for a gun model. When this command is used without any parameters, it will return the default gun model.
+
+Example:
+gun_model
+gun_model weapons/v_shotg
+gun_next
+Type: Operation
+Description: Displays the next frame for the current weapon model and reports the frame number. The first frame 0 is the default frame where the gun animation takes place. If the frame number is increased to anything above that frame, the gun model will be frozen in that frame until the gun frame is returned to 0.
+
+gun_prev
+Type: Operation
+Description: Displays the previous frame for the current weapon model and reports the frame number. The first frame 0 is the default frame where the gun animation takes place. If the frame number is increased to anything above that frame, the gun model will be frozen in that frame until the gun frame is returned to 0.
+
+gun_x
+Type: Toggle
+Default: 0
+
+Description: The x-axis position of the player's gun.
+
+Note: The x-axis is the left to right axis with negative numbers on the left and positive on the right.
+
+gun_y
+Type: Toggle
+Default: 0
+
+Description: The y-axis position of the player's gun.
+
+Note: The y-axis is the forward and back axis with negative numbers back and positive forward.
+
+gun_z
+Type: Toggle
+Default: 0
+
+Description: The z-axis position of the player's gun.
+
+Note: The z-axis is the up and down axis with negative numbers down and positive up.
+
+hand
+Type: Toggle
+Default: 0
+
+Description: Toggle the handedness of the player.
+
+Values:
+0 - Gun on the right and shots from the right.
+1 - Gun on the left and shots from the left.
+2 - No gun and shots from the center.
+heartbeat
+Type: Operation
+Description: Sends a manual heartbeat to the master servers.
+
+host_speeds
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of timing information.
+
+Output:
+all - Total time.
+sv - Server time.
+gm - Game time.
+cl - Client Time.
+rf - Renderer Time.
+hostname
+Type: String
+Default: noname
+
+Description: The name of the server.
+
+hostport
+Type: Register
+Default: *Unknown
+
+Description: *Unknown
+
+imagelist
+Type: Operation
+Description: Display a list of all loaded images, their types, dimensions, and color pallets. Also display the total texel count.
+
+Note: There are five columns of information. The first column identifies the image type, consult the list below for all possible types. The second column shows the x-axis size of the image. The third column shows the y-axis size of the image. The fourth column shows the image's dependency on the pallet, either the red-green-blue pallet, or the internal game pallet. The fifth column shows the image's path and filename.
+
+List:
+M - Model texture used for models shown in the map.
+P - Player images, shown on the player's view screen.
+S - Sprite picture.
+W - Wall texture used for the map.
+RGB - The image uses the standard RGB pallet.
+PAL - The images uses the internal game pallet.
+impulse
+Type: Function
+Syntax: impulse (number)
+
+Description: Send an impulse command to the server.
+
+Note: This command will be used by various mods to allow clients to access extra game features. Currently there are no internal impulses in Quake 2.
+
+Example: impulse 1
+
+in_initjoy
+Type: Command Line Parameter
+Default: 1
+
+Description: Toggle the initialization of joystick.
+
+Note: If this variable is set to 0 the game will not try to detect the joystick and will disable all joystick functions in the game.
+
+in_initmouse
+Type: Command Line Parameter
+Default: 1
+
+Description: Toggle the initialization of the mouse.
+
+Note: If this variable is set to 0 the game will not try to detect the mouse and will disable all mouse functions in the game.
+
+in_joystick
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of input from the joystick.
+
+in_mouse
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of input from the mouse.
+
+info
+Type: Operation
+Description: Display server information.
+
+Note: This command is pretty much broken. It cannot be executed by the server, and when it is executed by the client the output from the command is only displayed on the server's console. Basically this is a broken version of the serverinfo command since it displays the same information.
+
+intensity
+Type: Register
+Default: 2
+
+Description: The brightness of the OpenGL display.
+
+invdrop
+Type: Operation
+Description: Drop the currently selected item.
+
+Note: This is a very useful command in team games where you can supply your team with ammo, powerups, and weapons. This command will drop the item which is selected in the inventory to the ground a little in front of you. If a player is standing directly in front of you and you use this command he will automatically pick up the item that you drop.
+
+inven
+Type: Operation
+Description: Display the inventory screen.
+
+Note: When the inventory screen is shown, you can use the invnext and invprev commands to select items from the inventory. Also, if the inventory screen holds more information than it can show, using the above mentioned commands will scroll the inventory screen to show all the information.
+
+invnext
+Type: Operation
+Description: Select the next item in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invnextp
+Type: Operation
+Description: Select the next powerup in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invnextw
+Type: Operation
+Description: Select the next weapon in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invprev
+Type: Operation
+Description: Select the previous item in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invprevp
+Type: Operation
+Description: Select the previous powerup in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invprevw
+Type: Operation
+Description: Select the previous weapon in the inventory.
+
+Note: You can use this command without having the inventory screen up, in which case the little icon in the lower-right part of the screen will show which item is currently selected.
+
+invuse
+Type: Operation
+Description: Use the currently selected item from the inventory.
+
+ip
+Type: Register
+Default: localhost
+
+Description: The IP address used by the server.
+
+ip_clientport
+Type: Register
+Default: 0
+
+Description: *Unknown
+
+ip_hostport
+Type: Register
+Default: 0
+
+Description: *Unknown
+
+ipx_clientport
+Type: Register
+Default: 0
+
+Description: *Unknown
+
+ipx_hostport
+Type: Register
+Default: 0
+
+Description: *Unknown
+
+joy_advanced
+Type: Toggle
+Default: 0
+
+Description: Toggle advanced joystick functions.
+
+joy_advancedupdate
+Type: Operation
+Description: Initialize the joystick's advanced features.
+
+joy_advaxisr
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick r-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_advaxisu
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick u-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_advaxisv
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick v-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_advaxisx
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick x-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_advaxisy
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick y-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_advaxisz
+Type: Toggle
+Default: 0
+
+Description: Toggle the mapping of the joystick z-axis.
+
+Values:
+0 - Axis not used.
+1 - Axis is for forward and backward movement.
+2 - Axis is for pitch.
+3 - Axis is for side to side movement.
+4 - Axis is for yaw.
+16 + (value) - Axis Toggle the mapping is relative (no stop points).
+joy_forwardsensitivity
+Type: Register
+Default: -1
+
+Description: The sensitivity speed for moving forward and backward.
+
+joy_forwardthreshold
+Type: Register
+Default: 0.15
+
+Description: The dead-zone for moving forward and backward.
+
+joy_name
+Type: String
+Default: joystick
+
+Description: Joystick Name.
+
+joy_pitchsensitivity
+Type: Register
+Default: 1
+
+Description: The speed that you look up and down.
+
+Description:
+
+joy_pitchthreshold
+Type: Register
+Default: 0.15
+
+Description: The dead-zone for looking up and down.
+
+joy_sidesensitivity
+Type: Register
+Default: -1
+
+Description: The sensitivity speed for moving side to side.
+
+joy_sidethreshold
+Type: Register
+Default: 0.15
+
+Description: The dead-zone for moving side to side.
+
+joy_upsensitivity
+Type: Register
+Default: -1
+
+Description: The sensitivity speed for moving up and down.
+
+joy_upthreshold
+Type: Register
+Default: 0.15
+
+Description: The dead-zone for moving up and down.
+
+joy_yawsensitivity
+Type: Register
+Default: -1
+
+Description: The sensitivity speed for looking left and right.
+
+joy_yawthreshold
+Type: Register
+Default: 0.15
+
+Description: The dead-zone for looking left and right.
+
+kick
+Type: Function
+Syntax:
+kick (userid)
+kick (username)
+Description: Remove a client from the server.
+
+Note: You can remove clients from the server by their (userid) or by their (username).
+
+kill
+Type: Operation
+Description: Make the player commit suicide.
+
+Note: This command is commonly used in single-player mode where the player gets stuck somewhere and can't get out or if he just wants to start over. This command can also be used in multiplayer by players who want to take the easy way out of life.
+
+killserver
+Type: Operation
+Description: Shutdown the server.
+
+Note: This command will terminate the server, but it will not exit from the server's console. This is useful when changing mods for the server remotely.
+
+link
+Type: Function
+Syntax: link (from path) (to path)
+
+Description: Alter the actual location of a directory inside the game.
+
+Note: This command will allow you select where the game will look for its files. A set of empty quotes will clear any modifications that you make to a directory location.
+
+Example:
+link maps ""
+link maps "dmmaps"
+link maps "mission/maps"
+link sound/player/male "c:/quake2/newsounds/"
+load
+Type: Function
+Syntax: load (savegame)
+
+Description: Load a saved game.
+
+Note:The place where saved games are stored in is the baseq2/save directory. Within it are separate directories for each saved game. And within those directories are separate files for each map in the game unit which hold the status of all entities for each map.
+
+Example: load save3
+
+loading
+Type: Operation
+Description: Show the "Loading..." picture.
+
+Note: This is an internal command used by the client to show the "Loading..." graphic.
+
+log_stats
+Type: Toggle
+Default: 0
+
+Description: Toggle the logging of map statistics.
+
+logfile
+Type: Toggle
+Default: 0
+
+Description: Toggle the logging of console messages.
+
+Values:
+0 - Disable logging.
+1 - Enable buffered logging where the log file is only updated when the text buffer fills up. The log file will be deleted and overridden when a new server starts up.
+2 - Enable continuous logging where the log file is updated with every new line of text. The log file will be deleted and overridden when a new server starts up.
+3 - Enable continous logging where the log file is updated with ever new line of text. The log file will be appended to and logging will continute to the same log file when a new server starts up.
+lookspring
+Type: Toggle
+Default: 1
+
+Description: Toggle automatic centering of the screen when using +mlook.
+
+lookstrafe
+Type: Toggle
+Default: 0
+
+Description: Toggle automatic strafing when using +mlook.
+
+m_filter
+Type: Toggle
+Default: 0
+
+Description: Toggle the filtering of mouse input.
+
+Note: If this toggle is enabled the game will take the average value between two consecutive numbers produced by the mouse input and use that value as the movement value. Enabling this variable will cause the mouse movement to be smoother but there will be increased latency between the actual mouse movement and movement in the game.
+
+m_forward
+Type: Register
+Default: 1
+
+Description: The sensitivity for moving forward and back with the mouse.
+
+m_pitch
+Type: Register
+Default: 0.022
+
+Description: The sensitivity for looking up and down with the mouse.
+
+m_side
+Type: Register
+Default: 0.8
+
+Description: The sensitivity for moving left and right with the mouse.
+
+m_yaw
+Type: Register
+Default: 0.022
+
+Description: The sensitivity for looking left and right with the mouse.
+
+map
+Type: Function
+Syntax: map (filename)
+
+Description: Load maps, demos, or images.
+
+Note: This is an all purpose loading command. This command can load maps to play, play demos, and also show images on the screen. This seems to be a compilation of the gamemap and demomap commands. By default, this command will try to load a map when a filename is specified without an extension.
+
+Example:
+map base3
+map demo1.dm2
+map colormap.pcx
+map_noareas
+Type: *Unknown.
+Default: 0
+
+Description: *Disabled.
+
+mapname
+Type: String
+Default: base1
+
+Description: The name of the current map.
+
+Note: This is a read-only variable which displays the name of the current map.
+
+maxclients
+Type: Register
+Default: 1
+
+Description: The maximum number of clients for the server.
+
+maxentities
+Type: Register
+Default: 1024
+
+Description: The maximum number of entities on a map.
+
+maxspectators
+Type: Register
+Default: 4
+
+Description: The maximum number of spectators for the server.
+
+menu_addressbook
+Type: Operation
+Description: Display the server address book menu.
+
+menu_credits
+Type: Operation
+Description: Display the game credits.
+
+menu_dmoptions
+Type: Operation
+Description: Display the deathmatch options menu.
+
+menu_game
+Type: Operation
+Description: Display the single-player game menu.
+
+menu_joinserver
+Type: Operation
+Description: Display the join server menu.
+
+menu_keys
+Type: Operation
+Description: Display the key configuration menu.
+
+menu_loadgame
+Type: Operation
+Description: Display the load game menu.
+
+menu_main
+Type: Operation
+Description: Display the main menu.
+
+menu_multiplayer
+Type: Operation
+Description: Display the multiplayer menu.
+
+menu_options
+Type: Operation
+Description: Display the options menu.
+
+menu_playerconfig
+Type: Operation
+Description: Display the player configuration menu.
+
+menu_quit
+Type: Operation
+Description: Display the quit menu.
+
+menu_savegame
+Type: Operation
+Description: Display the save game menu.
+
+menu_startserver
+Type: Operation
+Description: Display the start server menu.
+
+menu_video
+Type: Operation
+Description: Display the video configuration menu.
+
+messagemode
+Type: Operation
+Description: Prompt for a message to send.
+
+Note: This command prompts for a message to send to everybody on the server. It is used for casual talking on the server.
+
+messagemode2
+Type: Operation
+Description: Prompt for a message to send to team members.
+
+Note: This command prompts for a message to send to your team players on the server. This is used for team talk when relaying strategy information, attack plans, or pleads for help.
+
+modellist
+Type: Operation
+Description: Display information on all loaded models, maps, and sprites.
+
+Note: This command will display information about models, maps, and sprites which are loaded into the memory in a list format. The first column in the list shows the size of the model, map, or sprite. The second column in the list shows the path and file location. The last line of the output shows the total size of all models, maps, and sprites currently present in the memory.
+
+msg
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of messages.
+
+Values:
+0 - All messages.
+1 - Most messages.
+2 - Limited messages.
+3 - Minimal messages.
+4 - No messages.
+name
+Type: String
+Default: Player
+
+Description: The player's name.
+
+needpass
+Type: Toggle
+Default: 0
+
+Description: Displays information about password settings on the server.
+
+Note: This is a read-only variable which is displayed globally in the serverinfo information to inform game browser software to determine the password settings on the server. A program such as GameSpy could use the output from this variable to ask the user for the password or the spectator password before he joins the game. The server uses the password and the spectator_password variables to set the appropriate password. Once a password has been set to either one of these variables then this variable will be automatically updated to display information about which passwords are necessary to play or spectate on the server.
+
+Values:
+0 - No passwords required.
+1 - Password reguired to play on the server.
+2 - Password required to sepectate on the server.
+3 - Password required to play or spectate on the server.
+net_shownet
+Type: *Unknown.
+Default: 0
+
+Description: *Disabled.
+
+netgraph
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the network performance graph.
+
+Note: The size of each bar is the latency time. A green bar indicates a successful packet transfer. A red bar indicates a lost packet.
+
+nextserver
+Type: String
+Default: (none)
+
+Description: Used for looping the introduction demos.
+
+Note: This variable is used to loop the introduction demos. This variable holds the name of the next alias to be executed after the demo finishes playing. A looping series of aliases is created which look something like 'alias l1 "demomap demo1.dm2; set nextserver l2"' and 'alias l2 "demo2.dm2; set nextserver l1"'. These two aliases would loop the demos until interrupted with a key press.
+
+noclip
+Type: Operation
+Description: Toggle no clipping mode.
+
+Note: When no clipping mode is enabled the player becomes a kind of a ghost, where he is able to walk through walls, objects, or other players. This command is mostly used for fly around the map or when the player becomes stuck and can't get out in any normal fashion. Also, if you set the variable gl_clear to 1 and gl_polyblend to 0 the areas outside of the map will turn pink and the annoying flashing images will disappear when outside of the map and using the OpenGL video driver. When using the Software video driver just set the variable cl_blend to 0 to achieve a similar effect.
+
+noipx
+Type: Command Line Parameter
+Default: 0
+
+Description: Toggle the use of IPX network protocol.
+
+notarget
+Type: Operation
+Description: Toggle the ability of the monsters to detect the player.
+
+Note: When in this mode is turned on monsters cannot see the player. If the player attack a monster the monster will see the player then and retaliate in the normal fashion. This command is useful to level author for walking around their level checking if all the monsters are being good and are in their right spots.
+
+noudp
+Type: Command Line Parameter
+Default: 0
+
+Description: Toggle the use of the UDP TCP/IP network protocol.
+
+password
+Type: String
+Default: (none)
+
+Description: The server password.
+
+Note: If this variable is set to none then no password is required to enter the server.
+
+path
+Type: Operation
+Description: Display the path and link information.
+
+Note: All the information about what path locations the game is using is displayed here. Also, all the .pak files which are being used by the game are displayed. This is a very helpful command in investigating in the game has access to all the necessary information.
+
+pause
+Type: Operation
+Description: Toggle pausing of the game.
+
+Note: This command is only available in single-player mode, and is useful if the player has to pause the game because of a phone call, or he needs some refreshment.
+
+paused
+Type: Toggle
+Default: 1
+
+Description: Toggle the pausing of the game.
+
+pingservers
+Type: Operation
+Description: Display information about servers in the address book.
+
+Note: This command will make two attempts to retrieve information about servers. The first attempt is made by broadcasting to all the servers on the current subnet to respond with their information. The second attempt is made by retrieving the information about servers which appear in the address book. The addresses of the servers in the address book appear in the adr? variables. Unfortunately, this command does not actually ping the servers to find out their latency, it just retrieves information about the current map and the number of players.
+
+play
+Type: Function
+Syntax: play (filename)
+
+Description: Play a sound file.
+
+Note: This command adds a sound/ prefix directory when executed, just keep this in mind when playing your own sound files.
+
+Example:
+play doors/dr1_strt.wav
+play items/n_health.wav
+playerlist
+Type: Operation
+Description: List in console all players in the game, their score, and the connect time.
+
+players
+Type: Operation
+Description: List in console all players in the game.
+
+port
+Type: Register
+Default: 27910
+
+Description: The TCP/IP port number used by the server.
+
+Note: If you are running multiple servers on the same computer then you must start each server with the '+set port 27910' parameter to manually set the port number for each server. It is recommended that servers use incremental port numbers, i.e. 27910, 27911, 27912. This makes it easy for the players to connect to the other servers without having to remember their port numbers.
+
+precache
+Type: Operation
+Description: Load up all the necessary information before entering a map.
+
+Note: This is an internal command used to load up all the necessary models, sounds, sprites, and images before starting a level. This command is send by the server to the client right before the server is ready to accept the client into the game. This command checks what level the server is running, and using that information compiles a list of all necessary games files that should be loaded up for that specific map, and loads them.
+
+prog
+Type: Operation
+Description: *Disabled.
+
+Note: This command has been disabled and it's use is unknown.
+
+protocol
+Type: Command Line Parameter
+Default: 31
+
+Description: The version number of the Quake 2 game protocol.
+
+Note: This is a read-only variable.
+
+public
+Type: Toggle
+Default: 0
+
+Description: Toggle listing server in id's master server list.
+
+qport
+Type: Command Line Parameter
+Default: 35462
+
+Description: The random internal network protocol port for Network Address Translation schemes.
+
+Note: This is a read-only variable. The value in the variable represents a random network protocol port which is used to help out any Network Address Translation proxies. This allows more than one person to play from behind a NAT router by using only one IP address.
+
+quit
+Type: Operation
+Description: Quit the game.
+
+Note: This command will disconnect from the server and shutdown the client program.
+
+r_drawentities
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of entities on the map.
+
+r_drawworld
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of walls and map BSP objects.
+
+r_dspeeds
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the render speeds in milliseconds.
+
+r_fullbright
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of maximum texture brightness.
+
+r_lerpmodels
+Type: Toggle
+Default: 1
+
+Description: Toggle the prediction of model movment.
+
+r_lightlevel
+Type: *Unknown.
+Default: 0
+
+Description: *Disabled.
+
+r_nocull
+Type: Toggle
+Default: 0
+
+Description: Toggle the rendering of objects which are covered up.
+
+r_norefresh
+Type: Toggle
+Default: 0
+
+Description: Toggle the refreshing of the renderer display.
+
+r_novis
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of BSP VIS tables.
+
+Note: The VIS tables are created when a level is processed by a VIS program. The VIS tables hold information about which areas should be displayed from other areas.
+
+r_speeds
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the renderer statistics.
+
+rate
+Type: Register
+Default: 2500
+
+Description: The maximum number of bytes that the server should send to the client.
+
+Note: Limit this value to a number close to the CPS speed that your connection can receive. A 28.8k/33.6 modem could be anywhere from 2400 to 3100 depending on compatibility between ISP and user modems. A good 53.3k connection with a 56k modem should be set from 4400 - 4800.
+
+rcon
+Type: Function
+Syntax:
+rcon (password) (command)
+rcon (command)
+Description: Remotely control a server.
+
+Note: This command is used to control a server from a client. This is very useful if the server is running at a remote location, and the server administrator does not have physical access to the server. There are two different syntax versions to this command. If the variable rcon_password is set the second syntax may be used since the password field will be filled automatically by the client. Also, be aware that it is possible to send commands to a server to which the client is not connected. This is accomplished with the setting of the rcon_address variable to the server's IP address. Using the command, a server administrator is able to control a server as if at the server's console.
+
+Example:
+rcon foo "map base1"
+rcon "map base1"
+rcon_address
+Type: String
+Default: (none)
+
+Description: The address to which rcon commands should be sent.
+
+rcon_password
+Type: String
+Default: (none)
+
+Description: The password that is used to access rcon functions.
+
+reconnect
+Type: Operation
+Description: Reconnect to the server.
+
+Note: This command will disconnect the client from the server, and automatically reconnect the client to the server. This is useful if the connection gets hung-up for some reason.
+
+record
+Type: Function
+Syntax: record (demoname)
+
+Description: Record a demo.
+
+Note: The player has to be in a map to start recording a demo. Also, to stop the recording of a demo use the stop command. Demo files have the default extension of .dm2 and are placed in the baseq2/demos directory.
+
+Example: record foodemo
+
+run_pitch
+Type: Register
+Default: 0.002
+
+Description: The amount that the player should tilt up and down while running.
+
+run_roll
+Type: Register
+Default: 0.005
+
+Description: The amount that the player should tilt left and right while running.
+
+s_initsound
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of sound hardware.
+
+s_khz
+Type: Register
+Default: 11
+
+Description: The sampling rate in KHz of the sound samples.
+
+Note: For high-quality sound samples use a value of 22.
+
+s_loadas8bit
+Type: Toggle
+Default: 1
+
+Description: Toggle if the sound samples should be loaded as 8-bit files.
+
+s_mixahead
+Type: Register
+Default: 0.2
+
+Description: The delay before mixing sound samples.
+
+s_primary
+Type: Toggle
+Default: 0
+
+Description: Toggle the use of the DirectSound primary buffer.
+
+Note: If this toggle is enabled it might cause problems for some sound hardware, use with caution.
+
+s_show
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of all sounds which are currently playing.
+
+s_testsound
+Type: Toggle
+Default: 0
+
+Description: Toggle the generation of a test tone to test the sound hardware.
+
+s_volume
+Type: Register
+Default: 0.7
+
+Description: The volume for the playback of sound samples.
+
+s_wavonly
+Type: Toggle
+Default: 0
+
+Description: Toggle the playback of only .wav file sound samples.
+
+save
+Type: Function
+Syntax: save (savegame)
+
+Description: Save the game.
+
+Note: The save game operation will create a directory named after the parameter. All save game files will reside in that directory. And within that directory are separate files for each map in the game unit which hold the status of all entities for each map.
+
+Example: save mygame
+
+say
+Type: Function
+Syntax: say (message)
+
+Description: Send a message to all the players on the server.
+
+Note: This command is not necessary when typing directly on the console since the player can just type a message and send it like it was a command. This command is mostly useful when creating aliases which broadcast frequently used messages or player taunts.
+
+Example:
+say I am the master Foo!
+say Thanks man!
+say Good bye everybody...
+say Hello all, The Foo Master has arrived to kick butt!
+say_team
+Type: Function
+Syntax: say_team (message)
+
+Description: Send a message to all the players on the server who are on your team.
+
+Note: This command can be used directly from the console to send messages to team mates. It can also be used to create aliases which broadcast frequently used team messages or when planning strategy with team mates.
+
+Example:
+say_team Let's attack now!
+say_team Let's regroup and kick the foo out of them!
+say_team The base has been overrun!
+score
+Type: Operation
+Description: Bring up score screen.
+
+scr_centertime
+Type: Register
+Default: 2.5
+
+Description: The amount of time in seconds that center print messages will be displayed.
+
+scr_conspeed
+Type: Register
+Default: 3
+
+Description: The speed at which the console is raised and lowered.
+
+scr_drawall
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of extended characters on the client's display.
+
+scr_printspeed
+Type: Register
+Default: 8
+
+Description: The speed in characters-per-second that messages should scroll on the client's screen.
+
+scr_showpause
+Type: Toggle
+Default: 1
+
+Description: Toggle the display of the pause graphic.
+
+scr_showturtle
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the slow frame-rate graphic.
+
+screenshot
+Type: Operation
+Description: Take a screenshot of the current view.
+
+Note: This command will take a screen shot of the current frame buffer. When a screen shot is taken while using software mode, the screen shot will be in the PCX format. When the screen shot is taken while using the OpenGL mode, the screen shot will be in TGA format to save allow the saving of high-color video mode information. This command is most useful when saving score information at the end of a match, or when taking screen shots of weird things in the game.
+
+sensitivity
+Type: Register
+Default: 3
+
+Description: The mouse sensitivity.
+
+serverinfo
+Type: Operation
+Description: Report server information.
+
+Note: This command will look for all the variables marked with the S (server) flag and report those variables and their settings. It is quite possible to create your own server variables using the set command and make them show up with this command and display them to all those server browser programs such as QView and GameSpy. It is advisable to create server variables with the names admin to report the name of the administrator, email to report the email address of the admin, location to tell the physical location of the server, and site to report the address of the web site associated with this server.
+
+serverrecord
+Type: Function
+Syntax: serverrecord (demoname)
+
+Description: Record a demo from the server with views of all players.
+
+Note: The demo that is going to be recorded with contain the data so that the view from each player's perspective is saved. This allows the server to record a one demo for all the players. A server recorded demo cannot be played back by Quake 2 without undergoing editing to separate out all of the different views.
+
+Example: serverrecord foodemo
+
+serverstop
+Type: Operation
+Description: Stop the recording of a server demo.
+
+set
+Type: Function
+Syntax:set (variable) (value) (flag)
+
+Description: Set or create a variable.
+
+Note: This command is used mostly to create new variables or change the state flags for current variables. If a variable already exists it is not necessary to use the set command to change the value of that variable, it is just possible to use the simple syntax "variable (value)". It is also very helpful to server administrators which want to setup dedicated variables to hold information about the server such as the email of the administrator, the location of the server, or the message-of-the-day. Another thing, variables which have no value will not show up when the commands serverinfo or userinfo are executed.
+
+Flags:
+s - Server flag. If this flag is set the variable and it's value will show up when the command serverinfo is executed.
+u - User flag. If this flag is set the variable and it's value will show up when the command userinfo is executed.
+Example:
+set foo "The Master Foo"
+set foospeed 800
+set admin MasterFoo s
+set email masterfoo@foo.org s
+set clan "Clan Foo Masters" u
+setenv
+Type: Function
+Description: Set external environment variables from inside the game.
+
+Note: This command can be used to pass settings from inside the game to the operating system with the use of environment variables. This command is the most useful for passing variables directly to the video driver libraries. Typing the command and the environment variable without being followed by a value will display the assigned value.
+
+Example: setenv fx_glide_shameless_plug 1 ; vid_restart setenv fx_glide_shameless_plug
+
+setmaster
+Type: Function
+Syntax: setmaster (IP address 1) (IP address 2) ... (IP address 7)
+
+Description: Link the server to a master.
+
+Note: It is possible to link a single server to as many as 7 masters. By linking the server to a master the master will add the server to a general list of all servers. Masters are then queried by server browser programs such as GameSpy to retrieve a list of game servers. The server will also send a heartbeat to the master once in a while to inform the master that the server is still alive and to prevent the master from removing the server from the list. Currently this command when executed without a master IP tries to register itself with the id Software Master at 192.246.40.37:27900.
+
+Example:
+setmaster 123.123.123.123
+setmaster 123.123.123.123 123.123.123.124 123.123.123.125 123.123.123.126
+showclamp
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of clamping information which relates to network performance.
+
+showdrop
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of information about dropped network packets.
+
+showpackets
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of information about all network packets.
+
+showtrace
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of network packet tracing information.
+
+sizedown
+Type: Operation
+Description: Decrease the size of the game screen.
+
+Note: It is possible to increase the frame rate on slower computers by decreasing the size of the game screen.
+
+sizeup
+Type: Operation
+Description: Increase the size of the game screen.
+
+Note: The size of the game screen will impact the frame rate, so it is advisable not to make the screen too large or performance will suffer.
+
+skill
+Type: Toggle
+Default: 0
+
+Description: Toggle the difficulty setting.
+
+Values:
+0 - Easy difficulty.
+1 - Medium difficulty.
+2 - Hard difficulty.
+skin
+Type: String
+Default: male/grunt
+
+Description: The texture skin that the player is wearing.
+
+skins
+Type: Operation
+Description: Display skin information.
+
+Note: This command will display the names of all the players on the server and the skins that they are wearing. This command will also reinitialize the skins and reload them.
+
+sky
+Type: Function
+Syntax: sky (skyname) (rotate) (x-axis) (y-axis) (z-axis)
+
+Description: Set the parameters for displaying the sky.
+
+Note: The skyname parameter specifies the first part of the filename for loading all the sky files. There are six sky files to load in total, they are the name of sky followed by the position. The following positions exist for a sky, dn (down), up (up), ft (front), bk (back), lf (left), and rt (right). The rotation parameter sets how fast the sky should turn in degree-per-second. It is possible to specify a negative value to make the sky rotate in the opposite direction. The last three parameters are basically toggles with possible settings of 0 or 1 which specify on which axis should the sky turn. By default the sky spins on the z-axis.
+
+Example:
+sky unit2_
+sky unit1_ 5
+sky unit3_ 3 1 0 0
+sky space1 -0.5 1 1 0
+snd_restart
+Type: Operation
+Description: Restart the sound system.
+
+Note: This command will shutdown the sound system, reinitialize all the sound settings, restart the sound system, and then reload all the sound files. This command is necessary when making changes to the sound parameters for the sound system which require reinitialization, such as changing the sound samples which used a different sampling rate.
+
+soundinfo
+Type: Operation
+Description: Display information about the sound system.
+
+Note: This command will display information such as the directory where sound files are stored, if the sound system is in stereo mode, the sampling rate for the sound system, the speed in hertz that the sound system is initialized in, and the memory location of the DMA buffer.
+
+soundlist
+Type: Operation
+Description: Display a list of all loaded sound files.
+
+Note: This command will list all the loaded sound files along with information about each sound file. There are four columns in the display. The first column has two possible values, no value, or a value of L (loop) which signifies that the sound is looping. The second column describes the sound as either (8b) 8-bit, or (16b) 16-bit sampling. The third column displays the size of the sound file. The fourth column displays the path and filename of the sound file.
+
+spectator
+Type: String
+Default: 0
+
+Description: Enable spectator mode and watch the game instead of play.
+
+Note: If this variable is set to 1 the player will turn into a spectator if already in the game, or enter the server as a spectator on the next connection. If this variable is set to a string then the player will enter the server as a spectator and provide the necessary password to enter the server. The spectator password is stored in the spectator_password variable for the server.
+
+spectator_password
+Type: String
+Default: (none)
+
+Description: Set the password necessary to join the server as a spectator.
+
+Note: If this variable is set to the string none then anybody can enter the server as a spectator without a password, this is in order to allow the usage of rcon to reset the password.
+
+status
+Type: Operation
+Description: Display server status.
+
+Note: The status output displays the name of the map currently running. There is also a list of all clients currently connected to the server. The first column named num displays the client's userid number. The second column named score displays the frag count. The third column named address displays the IP address of the client. The fourth column named name displays the game name of the player. The fifth column named ping displays the current ping/latency of the client to the server at the point in time when the command was executed.
+
+stop
+Type: Operation
+Description: Stop the recording of a demo.
+
+stopsound
+Type: Operation
+Description: Stop any sounds which are currently playing.
+
+Note: This command is useful if any sounds do not correctly finish up and end up looping themselves for no reason.
+
+sv
+Type: Function
+Syntax: sv (command)
+
+Description: This command can be used as a replacement for the impulse command of Quake. With this command you can send commands directly to the server but only if you do it from rcon or from the server's console. This is a very useful command for admins who like to hack the game source and add their own little commands.
+
+List:
+addip (ip address) - Add an IP address to the banlist.
+listip - List the banlist to the console.
+remove (ip address) - Remove an IP address to the banlist.
+writeip - Write the banlist to the listip.cfg file.
+sv_airaccelerate
+Type: Register
+Default: 0
+
+Description: The maximum additional allowable air acceleration velocity.
+
+Note: Normally this variable is set to 0 and players have no control of their velocity when in air. If this variable is increased then players will be able to control their velocities in mid-air allowing them more control of their movement. If you wish to make the air control the same as in Quake and QuakeWorld then you should set this variable to a value of 10. This variable is ignored for single-player and cooperative games.
+
+sv_enforcetime
+Type: Toggle
+Default: 0
+
+Description: Toggle the enforcing of time measurements between the client and the server.
+
+sv_gravity
+Type: Register
+Default: 800
+
+Description: The gravity in the game.
+
+sv_maplist
+Type: Function
+Syntax: sv_maplist "[map 1] [map 2] ... [map n]"
+
+Description: The list of maps that the server cycles through.
+
+Example:
+sv_maplist "base3 base1 base2"
+sv_maplist "base1 biggun q2dm1 boss2 fact1 q2dm2 fact3 hangar1"
+sv_maxvelocity
+Type: Register
+Default: 2000
+
+Description: The maximum velocity for any moving object.
+
+sv_noreload
+Type: Toggle
+Default: 0
+
+Description: Toggle the reloading of all the game data for every map.
+
+sv_reconnect_limit
+Type: Toggle
+Default: 3
+
+Description: The number of times that a client can reconnect to the server.
+
+sv_rollangle
+Type: Register
+Default: 2
+
+Description: *Disabled.
+
+sv_rollspeed
+Type: Register
+Default: 200
+
+Description: *Disabled.
+
+sw_allow_modex
+Type: Toggle
+Default: 1
+
+Description: Toggle the use of ModeX video modes.
+
+sw_clearcolor
+Type: Register
+Default: 2
+
+Description: The color of areas outside the map.
+
+sw_drawflat
+Type: Toggle
+Default: 0
+
+Description: Toggle the removal of textures from walls.
+
+sw_draworder
+Type: Toggle
+Default: 0
+
+Description: Toggle the order of rendering walls.
+
+sw_maxedges
+Type: Register
+Default: x
+
+Description: The maximum number of edges that the game should handle.
+
+sw_maxsurfs
+Type: Register
+Default: 0
+
+Description: The maximum number of surfaces that the game should handle.
+
+sw_mipcap
+Type: Register
+Default: 0
+
+Description: The dimensions of displayed textures.
+
+Note: The value of this variable will determine the dimensions of the textures which are displayed in the game. The displayed textures are shrunk by the formula 2^x where x is the value of this register. Setting this to a value which is larger than zero might provide performance increases on slow systems.
+
+sw_mipscale
+Type: Register
+Default: 1
+
+Description: The blending level of distant objects.
+
+sw_mode
+Type: Toggle
+Default: 0
+
+Description: The software video mode.
+
+Values:
+0 - 320 x 480
+3 - 400 x 300
+2 - 512 x 384
+3 - 640 x 480
+4 - 800 x 600
+5 - 960 x 720
+6 - 1024 x 768
+7 - 1152 x 864
+8 - 1280 x 960
+9 - 1600 x 1200
+sw_polymodelstats
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of current number of polygons.
+
+sw_reportedgeout
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the number of edges which could not be rendered.
+
+sw_reportsurfout
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of the number of surfaces which could not be rendered.
+
+sw_stipplealpha
+Type: Toggle
+Default: 0
+
+Description: Toggle the alternative display of alpha information.
+
+sw_surfcacheoverride
+Type: Toggle
+Default: 0
+
+Description: Override the usage of surface cache.
+
+sw_waterwarp
+Type: Toggle
+Default: 1
+
+Description: Toggle the warping effects while underwater.
+
+timedemo
+Type: Toggle
+Default: 0
+
+Description: Toggle the extrapolation of frames to maintain constant game speed.
+
+Note: If this toggle is enabled the game will not extrapolate any frames to keep the game speed constant. It will play a single frame only once thus increasing the overall speed of the game. If this toggle is enabled and a demo is played back the game will report the frames-per-second rate for that demo.
+
+timegraph
+Type: Toggle
+Default: 0
+
+Description: Toggle the display of a time compression graph.
+
+Note: If this toggle is enabled the time graph will show the information displaying the compression and expansion of game time to in order to keep the overall game time constant.
+
+timelimit
+Type: Register
+Default: 0
+
+Description: The number of minutes before switching to the next level.
+
+timeout
+Type: Register
+Default: 125
+
+Description: The maximum number of seconds before terminating a game connection.
+
+Note: If no packets are sent from the client to the server within that time range the server will disconnect the client from the game.
+
+timerefresh
+Type: Function
+Syntax:
+timerefresh
+timerefresh (parameter)
+Description: Test the frame-per-second rate.
+
+Note: When the command is used without any parameters the test is performed normally with the client actually seeing the screen turning the full 360-degrees. If the command is executed with any type of a parameter, a letter, a number, a character, then the test is performed in memory only without drawing the output on the screen. This command will calculate the frame-per-second rate by turning the player 360-degrees and showing exactly 128-frames as fast as possible. The time is then put into the equation " 128 / time = fps" to achieve the final result.
+
+Example:
+timerefresh
+timerefresh 1
+timerefresh foo
+timescale
+Type: Register
+Default: 1
+
+Description: The scale at which game time relates to real time.
+
+togglechat
+Type: Operation
+Description: Bring down the console to allow the player to send chat messages.
+
+Note: This command is performs the same identical action as the toggleconsole command.
+
+toggleconsole
+Type: Operation
+Description: Bring down the console to allow the player to type in console commands.
+
+Note: This command is performs the same identical action as the togglechat command.
+
+unbind
+Type: Function
+Syntax: unbind (key)
+
+Description: Remove a binding from a key.
+
+Note: This command will remove any commands which are bound to key, in effect making this key functionless. Please consult the bind command for a list of all possible key names. Also, consult the bindlist command to receive a listing of all currently bound keys. This command is useful if a key has been bound by accident and it's function is no longer needed.
+
+Example:
+unbind a
+unbind backspace
+unbindall
+Type: Operation
+Description: Remove the bindings from all keys.
+
+Note: This command will remove bindings from all the keys except for the escape and ~ (tilde) keys. Be very careful about using this command, since you will lose all bindings and functions outside of the console. Also, this command should be used by people who write scripts to remove any unwanted bindings before setting up personal bindings.
+
+use
+Type: Function
+Syntax: use (item)
+
+Description: Use an item.
+
+Note: This command can be used to setup individual key bindings which would use items with the press of a key. This command is also used when using keys to select weapons. Also, this command is able to use the item from the player's inventory without have the player perselect the item with the invnext or invprev commands.
+
+List:
+bfg10k - BFG10K.
+blaster - Blaster.
+chaingun - Chaingun.
+environment suit - Environment Suit.
+grapple - Grappling Hook (ThreeWave CTF).
+grenade launcher - Grenade Launcher.
+grenades - Hand Grenades.
+hyperblaster - HyperBlaster.
+invulnerability - Invulnerability.
+machinegun - Machinegun.
+power screen - Power Screen.
+power shield - Power Shield.
+quad damage - Quad Damage.
+railgun - Railgun.
+rebreather - Rebreather.
+rocket launcher - Rocket Launcher.
+shotgun - Shotgun.
+silencer - Silencer.
+super shotgun - Super Shotgun.
+Example:
+use blaster
+use quad damage
+userinfo
+Type: Operation
+Description: Display information about the client.
+
+Note: This command will display all the personal information about the client. This command displays all the variables and their values which have the U (user) flag set. It is possible to create new variables which will show up when this executed by turning on the appropriate flag with the set command.
+
+v_centermove
+Type: Register
+Default: 0.15
+
+Description: The speed at which the screen will automatically center.
+
+v_centerspeed
+Type: Register
+Default: 500
+
+Description: The distance traveled before the screen will automatically center.
+
+version
+Type: Command Line Parameter
+Default: Current Game Build
+
+Description: The version of the game.
+
+vid_front
+Type: Operation
+Description: Switch the display to use the front buffer.
+
+vid_fullscreen
+Type: Toggle
+Default: 0
+
+Description: Toggle if the video is displayed in full-screen mode.
+
+vid_gamma
+Type: Register
+Default: 1
+
+Description: The video gamma setting.
+
+vid_ref
+Type: String
+Default: gl
+
+Description: The name of the video renderer driver.
+
+vid_restart
+Type: Operation
+Description: Restart the video system.
+
+Note: This command is used if there is a problem with the video system or video settings have been changed and need the video system to be restarted. This command is also used when switching between different video system .dll files.
+
+vid_xpos
+Type: Register
+Default: 3
+
+Description: The x-axis position of the game screen on the desktop.
+
+vid_ypos
+Type: Register
+Default: 22
+
+Description: The y-axis position of the game screen on the desktop.
+
+viewpos
+Type: Operation
+Description: Display the current position of the player.
+
+Note: There are four values which are displayed. The first value is the x-axis location. The second value is the y-axis location. The third value is the z-axis location which is the current elevation. The fourth value is the x-axis angle which the player is facing.
+
+viewsize
+Type: Register
+Default: 100
+
+Description: The size of the game screen.
+
+wait
+Type: Operation
+Description: Wait one game tic.
+
+Note: This command is mostly used when creating complex sets of commands and aliases. Some commands cannot be executed in the same game tic, so this command allows a space in time between executing different commands. Be warned though, the time of the command varies from system to system based on the CPU speed. It is a very bad idea to use the command to time things using human time, and using more than one command in alias is quite unwise. Remember, the time of the command is different for each system.
+
+wave
+Type: Function
+Syntax: wave (number)
+
+Description: Make the player character display a hand gesture to other players on the server.
+
+Note: This command is best used to make fast and quiet gestures to other players. It can be used on enemy players to piss them off. It can also be used with team players to make silent and fast hand gestures to dictate strategy, kind of like milliary hand signals.
+
+List:
+0 - Flipoff.
+1 - Salute
+2 - Taunt.
+3 - Wave.
+4 - Point.
+Example: wave 2
+
+weaplast
+Type: Operation
+Description: Switches to the last weapon that the player had carried.
+
+Note: This command will bring up the weapon that was carried right before the weapon currently being carried. It will not go backwards in the history of weapons that the player has selected. If it is executed multiple times, it will toggle between the two last weapons carried.
+
+weapnext
+Type: Operation
+Description: Switches to the next weapon in the player's inventory.
+
+Note: The weapon that the command will switch to is based a predefined order set by the game. The order of selection is: Blaster, Shotgun, Super Shotgun, Machinegun, Chaingun, Grenade Launcher, Rocket Launcher, HyperBlaster, Railgun, BFG10K.
+
+weapprev
+Type: Operation
+Description: Switches to the previous weapon in the player's inventory.
+
+Note: The weapon that the command will switch to is based a predefined order set by the game. The order of selection is: BFG10K, Railgun, HyperBlaster, Rocket Launcher, Grenade Launcher, Chaingun, Machinegun, Super Shotgun, Shotgun, Blaster.
+
+win_noalttab
+Type: Toggle
+Default: 0
+
+Description: Toggle the ability to switch away from the game back to Windows.
+
+z_stats
+Type: Operation
+Description: Displays the memory statistics for the Z-buffer in the game.
+
+zombietime
+Type: Register
+Default: 2
+
+Description: The amount of time in minutes before a frozen character is removed from the map.
+
+4. Credits and Thanks
+This section identifies all parties to whom due credit or thanks. All the people below deserve full recognition for the work that they did contributing to this document. If I by any chance missed a name please inform me so that I can put it in to give you due credit.
+
+You, The Reader
+I would also like to thank all the readers of this document because they are the ones who ensure that we, the authors, have the strength to go on and produce our works. How much would our work be worth if nobody would ever read it or look at it?
+Daniel "Prog" Rinehart
+I would like to thank Prog for his work on the Quake Console Commands document which was the first one of it's kind. Prog was the first pioneer who ventured into the depths of the console and dared to document it.
+id Software
+I would like to thank id Software for making Quake 2 and because of that game the creation of this document was possible. Their use of the console for a game was a wonderful idea which has created a whole new way to customize the game.
+PlanetQuake
+I would like to thank all of the people at PlanetQuake and the PlanetQuake staff who have given us great support for displaying our work on their site. They have the #1 Quake site in the whole community and we're proud to be a part of it.
+Mondain
+Thanks to Mondain for noting the definition of the public command.
+Monkey
+Thanks to Monkey for noting that grenades was missing from the list within the definition of the use command.
+Mr. C
+Thanks to Mr. C for his help with the link command. Mr. C showed me a demonstration of this command by changing the location of the game maps.
+Dan Koppel
+Thanks to Dan of Xatrix Entertainment for his explanation of gl_showtris. I was not able to get the correct result due to being unsupported in the 3Dfx version.
+Rune Hansen
+Thanks to Rune for noting the continuous console logging setting of logfile. Rune searched everywhere for a way that he could monitor his dedicated server remotely, and came across this setting.
+Leo Davidson
+Thanks to Leo for noting the missing Power Shield entry within the use command in the old document.
+Jeff Dubrule
+Thanks to Jeff for his help with the gl_clear command.
+NetDweller
+Thanks to NetDweller for all of his proofreading help in the old document. Not to mention his help with a good number of commands by introducing some of their definitions and helping me test the others.
+Gnomon
+Thanks to Gnomon for his help defining cl_looptrack, cl_loopcount, and setenv. Gnomon remembered that Brian Hook defined setenv in his .plan file near the beginning of the Quake 2 project.
+bOi
+Thanks to bOi for sending me a capture from Redwood's site about rate and netgraph (Therefore thanks go to Redwood as well). Though I have stumbled across this a few times before, I was reminded that I needed to add more detail to the two commands.
+Moize
+Thanks for finding the missing cells value for the give command.
+Arno Fortelny
+Thanks for finding out that the gamedir command was missing.
+Brian Tuggle
+Thanks for finding out the meaning of the sv command.
+Pierre-Yves Boulanger
+Thanks for the description of the cmd putaway command and for spelling error fixes.
+Steve "Rastaf" Taylor
+Thaks for find the missing cells item from the drop command.
+Chuck Schmidt
+Because of Chuck's problem with the play command and the sound/ directory prefix, I was reminded to mention this little thing in the document so that others won't have the same problem.
+final
+Final's reminded me that I forgot to include the gl_triplebuffer command.
+Jason Spears
+Jason saw the omission for the description of the port command.
+5. Version Information
+December 3, 1998
+Updated the document due to the Quake 2 v3.20 release.
+Added the needpass variable.
+Updated the logfile variable with new settings.
+November 16, 1998
+Added the gl_triplebuffer variable that was left out, thanks to final.
+Added the description to the port command. Thanks to keen eyes of Jason Spears who saw the omission.
+November 6, 1998
+New legal terms for this document. It is now released under the Free Software Foundation's GNU General Public License Version 2.
+Added a little note about the sound/ directory prefix for the play command thanks to Chuck Schmidt.
+September 29, 1998
+Updated the HTML markup in the document. This should be the last such update because I think I solved all of the previous problems with HTML and the correct display of this document.
+Added my email address to the Abstract section. It was been removed long time ago because of too many emails, and I hope that this isn't the case this time.
+Updated the HTML 4.0 deceleration to include the URI of the DTD, as stated in the standard.
+Added the MIME Content-Type and Content-Language fields to explicitly set the character set encoding and language information.
+Added HTML meta information to each document to include all necessary header information to help search engines.
+Changed the Modified: field to Last Modified:, and Location: to Source: to avoid ambiguity.
+Changed the formatting for the lists of commands and parameters from heading section based formatting into definition list formatting with each command or parameter being the definition term and the fields being the definition data. This is the proper way to display this information in HTML avoiding excessive H3 and BLOCKQUOTE tags which were not being used correctly in the previous versions of this document.
+Changed the usage of bold and italic stylistic markup in order to facilitate better display of this document in browsers which do not support Cascading Style Sheets.
+Updated the document because of Quake 2 v3.19 release.
+Added commands: maxspectators, playerlist, spectator, spectator_password, sv_airaccelerate, sv_maplist.
+Updated commands: password.
+July 20, 1998
+I have removed my email address from this document because I was getting unwanted emails. If you want to contact me, go to my web site.
+July 16, 1998
+Used a spellchecker on this document, after all that time.
+Changed the internal HTML style for indentations and also to space out the fields for easier reading.
+Added subsection 6.4. Trademarks in the 6. Legal section to take care of any trademark legalities.
+Added a copyright notice to the Abstract section along with a short description about this document.
+Added descriptions to commands: cmd putaway.
+Added Pierre-Yves Boulanger to the Thanks list.
+Added the cells item to the drop command, thanks to Steve "Rastaf" Taylor.
+Added the description to the gl_ext_swapinterval command.
+Fixed errors in commands: gl_particle_att_*,noudp.
+Fixed the default value for the rate command.
+Fixed the sv command listing.
+Removed the Capture the Flag settings from the dmflags command.
+July 3, 1998
+Updated the document because of Quake 2 v3.17 release.
+Added the commands: gl_texturealphamode, gl_texturesolidmode.
+Modified the commands: allow_download_*, bind, gl_modulate, serverrecord.
+June 17, 1998
+Updated the nextserver variable to show how it's used in looping demos.
+June 9, 1998
+Modified the document because of the site redesign.
+Updated the document because of Quake 2 v3.15.
+Revised parts of the Legal section to enforce stricter standards for the display and distribution of this document.
+Added descriptions for all of the commands which were previously unidentified.
+Removed the Unidentified Commands section because all of the commands have been identified.
+Added the missing mailto: designations to all of the email links that were missing them.
+Added the missing cells item to the give command value list thanks to Moize.
+Added the missing gamedir variable, thanks to Arno Fortelny.
+Added an explanation to the sv command thanks to Brian Tuggle.
+Added the value of 2 to the cl_noskins command.
+Added the explanation for the serverrecord command.
+Added the new commands: allow_download_maps, allow_download_models, allow_download_players, allow_download_sounds, cl_vwep, download, filterban, flood_msgs, flood_persecond, flood_waitdelay, gender, gender_auto, gl_ext_compiled_vertex_array, gl_vertex_arrays, sv addip, sv listip, sv removeip, sv writeip.
+Added explanations to the following commands: clientport,
+Removed the following commands: cl_minfps, gl_3dfx_no_gamma, gl_ext_gamma, gl_ext_gamma_control, gl_strings.
+May 23, 1998
+Changed the HTML formatting that was used to display the fields for each of the console commands. This new style will conserve a lot more space.
+March 25, 1998
+Made a few stylistic changes and added a couple of fields to the Abstract section.
+March 4, 1998
+New commands: gl_ext_gamma_control and sv_reconnect_limit.
+Removed clientport, gl_3dfx_no_gamma, gl_ext_gamma, hostport, ip, ip_clientport, ip_hostport, ipx_clientport, ipx_hostport, and port.
+Revised indexes.
+Revised dmflags to list new options.
+February 25, 1998
+New commands: invnextp, invprevp, invnextw, invprevw, players, score, clientport, hostport, ip, ip_clientport, ip_hostport, ipx_clientport, ipx_hostport, port.
+Added definition to public.
+Revised definition of setenv.
+Revised index to hold all v3.13 commands and variables.
+Added new commands and variables into list. Some still have undefined definitions. Will revise later tonight.
+February 23, 1998
+Removed r_dspeeds since it was apparently removed from version 3.12.
+Added the definition of gl_shadows and removed the entry from undefined.
+Added the following commands: coop, gl_3dfx_no_gamma, gl_particle_att_a, gl_particle_att_b, gl_particle_att_c, gl_particle_max_size, gl_particle_min_size, gl_particle_size, sv, and weaplast.
+Modified default value of version.
+February 10, 1998
+Made a few changes to the source here and there to keep things unified.
+Updated Credits and Thanks section.
+Updated rate and netgraph.
+February 9, 1998
+Thanks to Rune Hansen for pointing out that logfile can continuously log the console when it is set to "2".
+Mr. C pointed out the very cool usage for the command link. You can use it to easily remap the location of the files that the game will use.
+February 5, 1998
+Added definition to gl_showtris. Thanks to Dan Koppel of Xatrix Entertainment for his explanation of this command.
+February 2, 1998
+Removed the link to the Location 1 of the document since it doesn't exist anymore.
+January 28, 1998
+Merged the Console Commands section with the Console Variables section.
+January 27, 1998
+Added the Questions and Corrections sections.
+Added the Credits section and removed the Credits: field.
+January 26, 1998
+Finished the merger between my old document and Nuitari's document.
+Added the whole Console Variables section.
+Made too many changes to mention, whole new release of the document.
+January 24, 1998
+Added the dir command which appeared in v3.10.
+January 19, 1998
+Updated the HTML code in the document.
+Added numbers to the different sections of this document.
+Reversed the definitions of Functions and Operations to comply with the definitions for programming languages.
+Created a reference link to every command to facilitate the creation of external index just for the commands.
+December 29, 1997
+Updated the document because of the Quake 2 v3.08 patch release.
+Updated the bind command because there are new key names available to bind the numeric keypad keys independently.
+December 28, 1997
+Updated the document because of the Quake 2 v3.08 patch release.
+Removed the fov command.
+Removed the packet command.
+Added the menu_dmoptions command.
+Updated the set command by removing all references to the use of the $variable syntax.
+Updated the set command examples because of a new way of setting flags for variables which does not require using the set command twice.
+Updated the cmd baselines, cmd begin, and cmd configstrings syntax lines to to remove the second reference of (IP port) which was incorrect.
+Updated the status of the gameversion command because it has become disabled.
+Updated the give command to state that the (amount) parameter does not work for grenades but does for other types of ammo.
+Updated the gun_model command since it has been fixed with this latest release.
+Updated the noclip command to add in an extra tips regarding flying outside and getting the best image.
+Updated the setmaster command with info about the id Software Master.
+December 26, 1997
+The Console Commands section was finished.
+Beta release.
+6. Legal
+6.1. Copyright
+This work is copyrighted pseudonymously by the author under all applicable laws. The author reserves all rights to this work. The copyright statement for this work is "Copyright 1997, 1998 JakFrost; All Rights Reserved".
+
+6.2. License
+I hereby grant the right to distribute and modify this work according to the Free Software Foundation's GNU General Public License Version 2, which can be accessed from http://www.gnu.org/copyleft/gpl.html; or write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA. If you received this work in archive format you should have this license in a file called 'copying.txt'. Please preserve all authorship and contact information when distributing or modifying this work. All derivative works or works containing parts of this work must be released under the same license or a later version of it.
+
+6.3. Trademarks and Servicemarks
+All trademarks and servicemarks used in this work are acknowledged and are the property of their rightful owners.
+
+6.4. Warranty Disclaimer
+THIS WORK IS PROVIDED "AS IS" WITHOUT ANY WARRANTY; WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE AUTHOR IS NOT LIABLE FOR ANY RESULTS ARRISING FROM THE USE OF THIS WORK. ALL RISKS AND RESULTS THEREOF FALL ON THE USER.
+
+See the Free Software Foundation's GNU General Public License Version 2 for details.
+
+Copyright 1997, 1998 JakFrost; All Rights Reserved
+
+

@@ -1,0 +1,31 @@
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+### Linux Cruft ###
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### macOS Cruft ###
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+### Windows Cruft ###
+*.lnk
+[Dd]esktop.ini
+ehthumbs.db
+Thumbs.db

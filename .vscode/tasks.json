@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Linux - Build Docker Image",
+            "type": "shell",
+            "command": "docker pull lacledeslan/steamcmd:linux; docker pull debian:stable-slim; docker build . -f linux.Dockerfile -t lltest/gamesvr-quake2 --no-cache --build-arg BUILDNODE=$env:computername;",
+            "group": "build",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Linux - Build & Execute Self Tests",
+            "type": "shell",
+            "command": "docker run -it --rm lltest/gamesvr-quake2 ./ll-tests/gamesvr-quake2.sh;",
+            "dependsOn": "Linux - Build Docker Image",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Linux - Build & Run Interactive Server (port 27920)",
+            "type": "shell",
+            "command": "docker run -it -p 27920:27910/udp lltest/gamesvr-quake2 /app/quake2 +set dedicated 1 +map q2dm1 +exec server.cfg",
+            "dependsOn": "Linux - Build Docker Image",
+            "group": "build",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Linux - Build & Shell In",
+            "type": "shell",
+            "command": "docker run -it --net=host --rm lltest/gamesvr-quake2;",
+            "dependsOn": "Linux - Build Docker Image",
+            "group": "build",
+            "problemMatcher": [],
+            "promptOnClose": true
+        }
+    ]
+}
