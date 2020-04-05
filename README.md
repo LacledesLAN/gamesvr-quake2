@@ -4,7 +4,7 @@ Quake II is a first-person shooter video game released in December 1997. It is n
 
 ![Quake II Screenshot](https://raw.githubusercontent.com/LacledesLAN/gamesvr-quake2/master/.misc/screenshot.jpg "Quake II Screenshot")
 
-This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be bare-bones and used as a stock server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-csgo-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
+This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be bare-bones and used as a stock server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-quake2-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Linux
 
