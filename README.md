@@ -2,7 +2,7 @@
 
 Quake II is a first-person shooter video game released in December 1997. It is not a direct sequel to Quake; developer id Software decided to revert to an existing trademark when the game's fast-paced, tactile feel felt closer to a Quake game than a new franchise. The gameplay is very similar to that featured in Quake, in terms of movement and controls, although the player's movement speed has been slowed down, and the player now has the ability to crouch. The multiplayer portion is similar to that of Quake. It can be played as a free-for-all deathmatch game mode, a cooperative version of the single-player game, or as a 1 vs 1 match.
 
-![Quake II Screenshot](https://raw.githubusercontent.com/LacledesLAN/gamesvr-quake2/master/.misc/screenshot.jpg "Quake II Screenshot")
+![Quake II Screenshot](https://raw.githubusercontent.com/LacledesLAN/gamesvr-quake2/master/.misc/screenshot.png "Quake II Screenshot")
 
 This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be bare-bones and used as a stock server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-quake2-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
