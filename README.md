@@ -8,7 +8,9 @@ This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its c
 
 ## Linux
 
-TODO: Badges
+[![](https://images.microbadger.com/badges/version/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own commit badge on microbadger.com")
 
 ### Download
 
