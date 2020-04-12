@@ -15,7 +15,7 @@ before_install:
 
 script:
   - docker version
-  - docker build --no-cache --tag lltest/gamesvr-quake2 --tag lacledeslan/gamesvr-quake2 --build-arg BUILDNODE=TravisCI --build-arg SOURCE_COMMIT="$TRAVIS_COMMIT" ./linux
+  - docker build --no-cache --tag lltest/gamesvr-quake2 --tag lacledeslan/gamesvr-quake2 --build-arg BUILDNODE=TravisCI --build-arg SOURCE_COMMIT="$TRAVIS_COMMIT" -f linux.Dockerfile .
   - docker run -it --rm lltest/gamesvr-quake2 ./ll-tests/gamesvr-quake2.sh
 
 before_deploy:
