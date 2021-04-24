@@ -35,13 +35,13 @@ docker run -it --rm --net=host lacledeslan/gamesvr-quake2 ./quake2 +set dedicate
 ### Run Simple Interactive Server using q2pro 64 bit mode
 
 ``` shell
-docker run -it --rm --net=host lacledeslan/quake2 ./q2pro_server_x64 +set dedicated 1 +map q2dm1;
+docker run -it --rm --net=host lacledeslan/gamesvr-quake2 ./q2pro_server_x64 +set dedicated 1 +map q2dm1;
 ```
 
 ### Run A Server mod using stock q2pro 64 bit mode. (CTF as an example)
 
 ``` shell
-docker run -it --rm --net=host lacledeslan/quake2 ./q2pro_server_x64 +set dedicated 1 +game ctf +map q2ctf1 +exec server.cfg;
+docker run -it --rm --net=host lacledeslan/gamesvr-quake2 ./q2pro_server_x64 +set dedicated 1 +game ctf +map q2ctf1 +exec server.cfg;
 ```
 
 ## Getting Started with Game Servers in Docker
