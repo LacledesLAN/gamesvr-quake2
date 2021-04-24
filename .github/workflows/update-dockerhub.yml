@@ -1,0 +1,21 @@
+name: Update Docker Hub Description
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update Docker HUB Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: lacledeslan/gamesvr-quake2
+          short-description: "Quake 2 Dedicated Server in Docker"
+          readme-filepath: ./readme.md

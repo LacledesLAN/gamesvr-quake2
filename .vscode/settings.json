@@ -1,11 +1,17 @@
 {
     "cSpell.words": [
+        "buildnode",
+        "dockerhub",
         "dockerized",
         "freeplay",
         "gamesvr",
+        "ghcr",
         "laclede",
         "lacledeslan",
+        "qemu",
         "repos",
-        "respawn"
+        "respawn",
+        "username",
+        "xpost"
     ]
 }
