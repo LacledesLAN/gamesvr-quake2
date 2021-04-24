@@ -34,8 +34,8 @@ jobs:
             BUILDNODE=GitHub (Run Number: ${{ github.run_number }} Run ID: ${{ github.run_id }})
             SOURCE_COMMIT=${{ github.sha }}
           no-cache: true
-#      - name: Test Linux Image
-#        run: docker run --rm lacledeslan/gamesvr-quake2:latest /app/ll-tests/gamesvr-quake2.sh
+      - name: Test Linux Image
+        run: docker run --rm lacledeslan/gamesvr-quake2:latest /app/ll-tests/gamesvr-quake2.sh
       - name: Login to DockerHub
         if: ${{ github.event_name != 'pull_request' }}
         uses: docker/login-action@v1

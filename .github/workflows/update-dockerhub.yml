@@ -18,4 +18,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: lacledeslan/gamesvr-quake2
           short-description: "Quake 2 Dedicated Server in Docker"
-          readme-filepath: ./readme.md
+          readme-filepath: ./README.md
