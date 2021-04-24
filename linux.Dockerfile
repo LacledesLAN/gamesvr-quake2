@@ -52,7 +52,7 @@ RUN true
 
 COPY --chown=Quake2:root ./dist/linux/ll-tests /app/ll-tests
 
-RUN chmod +x /app/ll-tests/*.sh && chmod +x /app/q2pro_server_x64;
+RUN chmod +x /app/ll-tests/*.sh && chmod +x /app/q2pro_server_x64 && chmod +x /app/quake2;
 
 COPY --chown=Quake2:root ./dist/app /app/
 
