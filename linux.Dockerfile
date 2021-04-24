@@ -8,7 +8,11 @@ RUN echo "\nDownloading installer from $contentServer" &&`
         curl -sSL "http://content.lacledeslan.net/fastDownloads/_installers/quake2-3.20-glibc-i386-full-linux2.0.tar.bz2" -o /tmp/quake2.tar.bz2 &&`
     echo "Decompressing files" &&`
         cd /tmp &&`
-        tar -xvjf /tmp/quake2.tar.bz2 --directory /output
+        tar -xvjf /tmp/quake2.tar.bz2 --directory /output &&`
+    echo "\nDownloading q2pro from $contentServer" &&`
+        mkdir --parents /tmp &&`
+        echo "\nDOWNLOADING q2PRO 64 BIT SERVER" &&`
+        curl "http://content.lacledeslan.net/fastDownloads/_installers/q2proded-64" -o /output/q2pro_server_x64
 
 #=======================================================================`
 FROM debian:stable-slim
@@ -22,7 +26,7 @@ EXPOSE 27910/udp
 
 RUN dpkg --add-architecture i386 &&`
     apt-get update && apt-get install -y `
-        lib32gcc1 locales locales-all tmux &&`
+        lib32gcc1 locales locales-all tmux zlib1g:i386 zlib1g &&`
     apt-get clean &&`
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*;
 
@@ -47,7 +51,10 @@ COPY --chown=Quake2:root --from=quake2-builder /output /app
 RUN true
 
 COPY --chown=Quake2:root ./dist/linux/ll-tests /app/ll-tests
-RUN chmod +x /app/ll-tests/*.sh;
+
+RUN chmod +x /app/ll-tests/*.sh && chmod +x /app/q2pro_server_x64;
+
+COPY --chown=Quake2:root ./dist/app /app/
 
 USER Quake2
 

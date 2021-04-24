@@ -1,1 +1,14 @@
 * text=auto eol=lf
+
+*.lst text
+
+*.bsp binary
+*.dll binary
+*.md2 binary
+*.pak binary
+*.pcx binary
+*.qst binary
+*.so binary
+*.tga binary
+*.wal binary
+*.wav binary

@@ -4,13 +4,13 @@ Quake II is a first-person shooter video game released in December 1997. It is n
 
 ![Quake II Screenshot](https://raw.githubusercontent.com/LacledesLAN/gamesvr-quake2/master/.misc/screenshot.png "Quake II Screenshot")
 
-This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be bare-bones and used as a stock server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-quake2-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
+This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be a basic server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-quake2-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+This docker image contains the original server software along with both 32 and 64 versions of [Q2PRO](https://github.com/skullernet/q2pro) for extra functionatlity and troubleshooting. Also included are compiled versions of [ctf for yquake 2](https://github.com/yquake2/ctf) and [OpenRocket Arena 2 by packetflinger](https://github.com/packetflinger/openra2).
 
 ## Linux
 
-[![](https://images.microbadger.com/badges/version/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/commit/lacledeslan/gamesvr-quake2.svg)](https://microbadger.com/images/lacledeslan/gamesvr-quake2 "Get your own commit badge on microbadger.com")
+[![linux/amd64](https://github.com/LacledesLAN/gamesvr-quake2/actions/workflows/build-linux-image.yml/badge.svg?branch=master)](https://github.com/LacledesLAN/gamesvr-quake2/actions/workflows/build-linux-image.yml)
 
 ### Download
 
@@ -26,10 +26,22 @@ The image includes a test script that can be used to verify its contents. No cha
 docker run -it --rm lacledeslan/gamesvr-quake2 ./ll-tests/gamesvr-quake2.sh;
 ```
 
-### Run Simple Interactive Server
+### Run Simple Interactive Server using stock server
 
 ``` shell
 docker run -it --rm --net=host lacledeslan/gamesvr-quake2 ./quake2 +set dedicated 1 +map q2dm1;
+```
+
+### Run Simple Interactive Server using q2pro 64 bit mode
+
+``` shell
+docker run -it --rm --net=host lacledeslan/quake2 ./q2pro_server_x64 +set dedicated 1 +map q2dm1;
+```
+
+### Run A Server mod using stock q2pro 64 bit mode. (CTF as an example)
+
+``` shell
+docker run -it --rm --net=host lacledeslan/quake2 ./q2pro_server_x64 +set dedicated 1 +game ctf +map q2ctf1 +exec server.cfg;
 ```
 
 ## Getting Started with Game Servers in Docker

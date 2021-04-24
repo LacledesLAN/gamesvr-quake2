@@ -1,0 +1,429 @@
+Title    : Rocket Arena 2
+Filename : ra2250sv.zip
+Version  : 2.250 Release
+Date     : 10-07-99
+Authors  : David 'crt' Wright <wrightd@gamespy.com>
+           Mungo <bml@netwiz.net>
+Web Page : http://www.planetquake.com/arena
+Discussion list: rocketarena-subscribe@list.gamespy.com
+
+-----
+Intro
+-----
+Please read this entire file, as it contains important info on installation.
+Many options have changed/been added in this version, so please double check
+everything, even if you are just upgrading.
+Also, be sure to read the readme.txt included in the client package.
+
+-------------------------
+Installation Instructions
+-------------------------
+This is the server package for Rocket Arena 2. You will also need the client
+pak (a seperate download) installed on the server. Download it and install
+according to the included instructions.
+Please note that on Unix machines you may need to rename the client EXE file
+to a ZIP file and unzip it manually.
+
+Extract all of the files to your \quake2\arena directory.
+
+You can put the raserver.bat in your \quake2 directory.
+
+Customize the server.cfg to your tastes. It includes the admincode (see below)
+which will allow for in-game configuration of the mod. Please change this
+code!
+
+Please see below for info on the arena.cfg file, used to customize settings
+on a per server/per level/per arena basis. 
+It includes map rotation information as well.
+
+Customize the raserver.bat file if needed as well (maxclients, etc).
+
+If you want to run a listen server (i.e. you play, and others play with you) then
+change the +set dedicated 1 in the raserver.bat to +set dedicated 0.
+
+You can edit the "motd.txt" file to display a message to connecting clients.
+See the included one for line size information.
+
+**************************
+IMPORTANT!!!
+**************************
+The default settings in server.cfg include:
+set public 1
+setmaster q2master.planetquake.com
+
+set logfile 2
+set netlog ripper.planetquake.com:21998
+
+The first two lines publish your server on the PlanetQuake master list so that
+people can see it in GameSpy. If you don't want your server to be public, set 
+public 0 and remove the setmaster line.
+
+The second two lines enable net logging. See below for net logging info.
+If you are running on a LAN and not connected to the Internet, REMOVE THESE LINES!!
+If the server crashes after the first frag, then it is having trouble sending the
+net logging info and you should turn net logging off.
+
+--------------
+Server Crashes
+--------------
+Server crashes will not be tolerated! RA2 has been designed and tested to be
+a highly reliable mod. If you are experiencing server crashes. please contact
+me asap so we can track down the cause. If you have physical access to the server,
+the following info would be useful following a crash:
+1. The full text of the "Details" box on the crash dialog
+2. The text on the console at the time of crash
+3. The qconsole.log file in the arena directory after the crash (deleted
+when the server is restared, so grab it fast!)
+4. The drwatson32.log file (in your winnt directory) if on Windows NT
+5. A stack trace (on Unix) if available.
+
+--------------------------
+Administration / Mod setup
+--------------------------
+There are several console variables which control how the mod functions.
+Most other options have been moved to the arena.cfg file.
+
+"set logfile 2" will instruct RA2 create an standard log file.
+If no additional options are specified, it will create the file "stdlog.log" in
+your \quake2\arena directory. You can add "set logname mylog.log" to use a different
+filename
+mation.
+
+"set admincode 1234" is the code (up to 8 digits) that you set to allow in-game
+administration of the server.
+
+"set netlog ripper.planetquake.com:21998" will send all logging information to that
+machine. See below for net logging information.
+
+"set public 1" will allow the server to be displayed on the id list. You MUST set
+public 1 for your netlog stats to be accepted.
+
+"set arenacfg myarena.cfg" will allow you to use filenames other than arena.cfg 
+(to run two different servers on the same install for example).
+
+--------------
+arena.cfg file
+--------------
+The arena.cfg file allows you to specify map options on a:
+1. per server
+2. per map
+3. per arena
+basis
+Information is stored in a hierarchical format. Priority goes in order to:
+1. Values for the specific arena
+2. Values for that map
+3. Global values defined at the top of the arena.cfg file
+4. Default values stored in the game code.
+
+The format of the file is (note that the < > characters are not typed!):
+<global default option>;
+<global default option>;
+<mapname> {
+//comment
+	<map default option>;
+	<map default option>;
+	<map default option>;
+	<arena number> {
+			<arena default option>;
+			<arena default option>;
+			<arena default option>;
+	}
+	<arena number> {
+			<arena default option>;
+	}
+}
+
+For example:
+//-----------START OF FILE------------
+maploop: ra2map1 ra2map3 ra2map5 q2dm1; // <-- sets the map rotation for the server
+minping: 150; // <-- sets the default minimum ping to 150 for all arenas
+ra2map1 {    // <-- ra2map1 is the map name
+		weapons: 2 3 4 5 6 7 8 9; //<-- these will be the default weapons, if none are specified for an arena
+		armor: 200; //<-- default health if none is specified
+		health: 100; //<-- default armor
+	1 {
+		weapons: 2 3 4 5 6 7 9; //<-- arena 1 takes out hyperblaster
+		armor: 100;  //<-- reduces default armor to 100
+		playersperteam: 2; //<-- 2v2 matches
+		rounds: 3; //<-- 2 out of 3 rounds wins the match
+	}
+	2 {
+		weapons: 2 3 4 5 6 7 8 9 0; //<-- all weapons allowed
+		armor: 150; //<-- only 150 armor
+		health: 90; //<-- 90 health to start
+		pickup: 1; //<-- designates this as a pickup arena
+		rounds: 9; //<-- 5 out of 9 rounds takes the match
+	}
+	3 {
+		minping: 0; //<-- overrides the minping:150 set on the server. Everyone can play here
+	}
+	4 {
+		weapons: 0; //<-- only blaster and BFG are allowed
+		health: 500; //<-- start with a ton of health
+		armor: 500; //<-- and lots of armor
+		cells: 999; //<-- starting cells is 999 now
+	}
+//you do not need to list all the maps/arenas, unlisted ones will use defaults
+}
+q2dm8 {
+		minping: 0; //all people allowed on this map. Overrides global 150 value
+		pickup: 1; //all arenas (only 1 actually) will be pickup
+		rounds: 9; //best 5 of 9
+		cells: 50; //can't go crazy with hyperblaster
+}
+
+Available Options are:
+
+weapons: 2 3 4 5 6 7 8 9 0;
+     where the number corresponds to the default Q2 binding (2 = shotgun, 0 = bfg)
+armor: <value>;
+health: <value>;
+playersperteam: <value>; //maximum number of players to allow on a team. Smaller teams can join, and players can join teams already in arenas.
+minping: <value>;
+maxping: <value>;
+rounds: <odd numbered value>;
+max_teams: <value>; //to limit the teams in an arena. Automatically set to 2 for pickup arenas.
+pickup: <1/0>; //enable / disable pickup teams for this arena (disabled by default)
+shells: <value>;
+bullets: <value>;
+slugs: <value>;
+grenades: <value>;
+rockets: <value>;
+cells: <value>;
+grapple: <1/0>; //enable / disalbe the offhand grapple in this arena
+votetries: <value>; //max number of times a person can propose a vote (stop vote spamming)
+fastswitch: <1/0>; //turn on/off fast weapon switching (on by default)
+healthprotect: <0/1/2>; // 0 = hurt everyone | 1 = don't hurt self or team | 2 = hurt self, but not team (default = 1)
+armorprotect: <0/1/2>;  // 0 = hurt everyone | 1 = don't hurt self or team | 2 = hurt self, but not team (default = 2)
+fallingdamage: <1/0>; // 1 = damage from falls | 0 = no damage
+allowvotingarmor: <1/0>; // these values allow you to turn off voting for specific items on your server, if you so choose
+allowvotinghealth: <1/0>;
+allowvotingminping: <1/0>; 
+allowvotingmaxping: <1/0>;
+allowvotingplayersperteam: <1/0>;
+allowvotingrounds: <1/0>;
+allowvotingmaxteams: <1/0>;
+allowvotingarmorprotect: <1/0>;
+allowvotinghealthprotect: <1/0>;
+allowvotingshotgun: <1/0>;
+allowvotingsupershotgun: <1/0>;
+allowvotingmachinegun: <1/0>;
+allowvotingchaingun: <1/0>;
+allowvotinggrenadelauncher: <1/0>;
+allowvotingrocketlauncher: <1/0>;
+allowvotinghyperblaster: <1/0>;
+allowvotingrailgun: <1/0>;
+allowvotingbfg: <1/0>;
+allowvotingfallingdamage: <1/0>;
+lockarena: <1/0>; //if you set this to 1, no one will be able to join that arena. YOU CAN'T UNDO IT WITHOUT RESTARTING THE SERVER.
+competitionmode: <1/0>; //enables compeition mode (can't track other team after you die)
+damagescoring: <1/0>; // if set, player points are based on damage done 100 damage
+
+
+Please take a look at the included arena.cfg for some more examples.
+If your settings are not being used, please make sure that:
+1. you have a ":" (colon) seperating the identifier and the value
+2. you have a ";" (semi-colon) at the end each line
+Please direct any arena.cfg related questions/comments to Mungo at the
+e-mail address above.
+
+The default values if none are specified in the config are:
+		weapons : 2 3 4 5 6 7 8 9;
+		armor : 200;
+		health : 100;
+		minping : 0;
+		maxping : 1000;
+		playersperteam : 1;
+		max_teams : 128;
+		shells : 100;
+		bullets : 200;
+		slugs : 50;
+		grenades : 50;
+		rockets : 50;
+		cells : 150;
+		fastswitch : 1;
+		armorprotect : 2;
+		healthprotect : 1;
+		grapple : 0;
+		fallingdamage: 1;
+		compeitionmode: 0;
+		damagescoring: 0;
+	if (it is a multi arena map)
+			pickup : 0;
+			rounds : 1;
+	else (it is a id / single arena map)
+			pickup : 1;
+			rounds : 9;
+
+------------
+Pickup Teams
+------------
+Rocket Arena 2 now supports Clan Arena style pickup teams.
+Simply set "pickup: 1;" for any arena/map you want to have pickup teams on.
+Two teams will appear on the main menu (arena # red/arena # blue), and players 
+will be able to join one of the teams and instantly be put in the arena.
+
+You should also set multiple rounds "rounds: 9;" or so, so that the matches
+last a bit longer. There is a 15 second waiting period between matches, so
+that players can switch teams if they want.
+
+
+
+------------
+Net Logging
+------------
+Rocket Arena 2 has network logging support. To enable this add:
+"set public 1" and
+"set netlog ripper.stanford.edu:21998" in your server.cfg file.
+This will send kill information to that machine for central collection
+and analysis. This system is not 100% reliable (about 1/1000 kills are
+lost in transit) but is STRICTLY FOR FUN, so if you're looking for more
+serious/accurate rankings, do them for your own server only.
+
+Right now all I am doing with the netlog data is displaying the top 5 
+fraggers of the day on the top of the Rocket Arena page. Future uses may
+be considered. The comprehensive stats were dicontinued because they fostered
+an environment of intense competition that made many people uncomfortable.
+
+----------------------
+In Game Administration
+----------------------
+To use the in game administration, just type /cmd admin <admincode>
+(e.g. /cmd admin 1234)
+
+It will pop up a menu allowing you to select things like fraglimit, timelimit,
+and map. You can cycle through all the maps in the maploop: line in the arena.cfg file.
+Use invuse (ENTER) to increment a value and invdrop (') to decrease it.
+
+Arena administration is done by typeing: /cmd arenaadmin <admincode> <arena #>
+(e.g. /cmd arenaadmin 1234 1)
+This will give you a menu similar to the voting menu, but you can force the changes.
+
+There are two options only available on the Arena Admin menu (not in voting)
+You can "lock" an arena. This is to allow clans to have matches on a server without
+the rcon code. To use this, have all of the players in the game enter the arena, then
+have the admin "lock" the arena on the menu. No players will be able to enter that 
+arena until it is "unlocked" (or all players leave the arena, in which case it will
+be reset/unlocked).
+You can set an arena in "compeition mode". This will make it so that observers can
+only track their own team, and only using in-eyes view.
+This is intended for SERIOUS competitions only. Public servers
+should NOT set this, as it defeats much of the fun of watching a match.
+
+
+-------
+Credits
+-------
+Please see the client readme for full credits.
+
+
+--------------------------------------
+Copyright and Distribution Permissions
+--------------------------------------
+
+This patch is freely distributable provided that this readme is distributed
+as well and is unchanged.
+
+All code is Copyright David Wright 1999.
+Commercial code licensing is available by contacting wrightd@gamespy.com
+
+DISCLAIMER: THE PROGRAM IS DEFINED AS THE QUAKE 2 MOD "ROCKET ARENA 2" AND
+  ALL FILES CONTAINED WITHIN.
+  BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+  FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+  OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+  PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+  OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+  TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+  PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+  REPAIR OR CORRECTION.
+
+
+
+------------
+Availability
+------------
+
+This modification is available from the following places:
+
+WWW   : http://www.planetquake.com/arena
+
+
+
+---------------
+Version History
+---------------
+2.09
+Initial Release
+
+2.094
+Better server stability, minor gameplay tweaks
+
+2.096
+100% server reliablity
+Advanced configuration, on both a per map and per arena level:
+-Default Weapons
+-Starting health/armor
+-Number of players per team
+-Ping filtering
+Enhanced teamplay
+Player status for observers
+New sounds
+Teamplay works on maps with only a few spawn points
+(people don't get stuck)
+
+2.098
+Q2 3.13 compatible, based on 3.05 code
+Voting system for arena settings
+Enhanced arena.cfg with more options
+Centralized stats system
+Pickup team play
+Talk commands on a per arena basis
+MOTD support
+changes in map rotation (done in arena.cfg now)
+
+2.110
+First full release version
+Fixed menu code
+Lots of new options, for players and servers
+
+2.200
+9 NEW Maps with 53 new Arenas
+Off-center countdown 
+Player remaining count on status bar in pickup 
+One team is spawned on even spawn points, one on odd
+Health and Armor Protect on the voting menu 
+Only changed items are shown on the voting menu 
+Server ops can specify things that can't be voted on 
+Anti-Vote Spamming code 
+New Standard logging options 
+Server Admins can lock arenas (for matches,etc) 
+OPTIONAL Offhand Grappling Hook
+Fixed endless ticking from hand grenade 
+Fixed telefrag protection on lifts 
+Observers telefragging players bug corrected 
+All New Skins, including support for Crackhor and Cyborg 
+Countdown doesn't make voting/other menus disappear 
+Anti-ZBOT Code
+
+2.210
+Added +hook alias, in addition to +grap (both are the same)
+Fixed documentation errors (allowvoting names were wrong, health/armorprotect values incorrect)
+Fixed even/odd spawning for pickup
+Added Falling damage option/voting
+Prints IP address on connect
+Work-around for exploit on ra2map13 (pit)
+
+2.220
+Added new Competition mode
+Updated fraglimit/timelimit/ping/armor counters -- allow zero
+Print who initiated the vote when voting
+Fixed standard logging bug
+Improved votespamming protection
+
+2.250
+Improved Competition mode
+Added Damage Scoring (1 pt per 100 damage)
+Settable arena.cfg file for each server (set arenacfg myarena.cfg)
+New Top Secret Feature (TM)

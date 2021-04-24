@@ -1,0 +1,1 @@
+quake2 +set deathmatch 1 +set dedicated 1 +set maxclients 16 +set game arena +exec server.cfg
