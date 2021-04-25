@@ -12,6 +12,6 @@ Let us know by using [GitHub issues](https://github.com/LacledesLAN/gamesvr-quak
 
 ## A few notes about Quake2
 
-This docker container does contain [Q2pro](https://github.com/skullernet/q2pro) and the stock game server software, which means for all mods will require the proper binary files such as gamei386.so and gamex86_64.so. It is best to compile from sourceode in a 64 bit version of ubuntu order to get the right version.
+This docker container does contain [Q2pro](https://github.com/skullernet/q2pro) and the stock game server software running within Ubuntu, which means for all mods will require the proper binary files such as gamei386.so and gamex86_64.so. It is best to compile from sourceode in a 64 bit version of ubuntu order to get the right version.
  
 Since this is to be an example server, to help with configuration It is best to put example config and maplist files in as placeholders to help with documentation and configuration. We are always looking to add and preserve game mods and addons, we just still want to make this a basic server to build on. Just consider the /dist/app to be the same as the quake2 base directory where the server binary is.
