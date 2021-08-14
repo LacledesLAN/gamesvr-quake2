@@ -1,0 +1,33 @@
+/////////////////
+//Operator Flags/
+////////////////
+//OP_SPEC		1
+//OP_SAY		2
+//OP_SWITCH		4
+//OP_CHANGEMAP		8
+//OP_LOCKTEAMS		16
+//OP_RESTART		32
+//OP_KICK		64
+//OP_STATUS		128
+//OP_SILENCE		256
+//OP_LOCKSERVER		512
+//OP_LISTEN		1024
+//OP_SHOWBANNEDFILE	2048
+//OP_BAN		4096
+//OP_LIGHTS		8192
+//OP_PROTECTED		16384
+//OP_ADDOP		32768
+//OP_MODOP		65536
+//OP_RCON		131072
+
+//Seems like a good standard op lvl: 25087
+Add 'em up and there you are.
+
+For full OPs it all adds up to 262143
+
+I'd say use these for standard matchops
+//OP_CHANGEMAP		8
+//OP_LOCKTEAMS		16
+//OP_RESTART		32
+//OP_KICK		64
+Which is: 120

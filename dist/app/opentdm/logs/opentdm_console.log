@@ -1,0 +1,13 @@
+[2021-04-20 00:38] Logging console to logs/opentdm_console.log
+[2021-04-20 00:38] public will be changed for next game.
+[2021-04-20 00:38] ------- Server Initialization -------
+[2021-04-20 00:38] SpawnServer: q2dm3
+[2021-04-20 00:38] WARNING: The cvar 'timelimit' is no longer used. Did you intend to set g_match_time?
+[2021-04-20 00:38] Map has 7 spawn points.
+[2021-04-20 00:38] -------------------------------------
+[2021-04-20 00:39] BEan tripped on his own grenade.
+[2021-04-20 00:40] BEan is ready!
+[2021-04-20 00:41] BEan[172.30.0.117:64547] disconnected
+[2021-04-20 00:41] BEan disconnected
+[2021-04-20 00:41] ==== ShutdownGame ====
+[2021-04-20 00:41] Closing console log.

@@ -1,0 +1,266 @@
+:append
+{
+"origin" "800 0 216"
+"classname" "info_flag_red"
+}
+{
+"origin" "-400 550 232"
+"classname" "info_flag_blue"
+}
+{
+"origin" "1075 -100 216"
+"classname" "info_player_red"
+}
+{
+"origin" "1075 0 216"
+"classname" "info_player_red"
+}
+{
+"origin" "1075 100 216"
+"classname" "info_player_red"
+}
+{
+"origin" "1075 200 216"
+"classname" "info_player_red"
+}
+{
+"origin" "1075 300 216"
+"classname" "info_player_red"
+}
+{
+"origin" "1075 400 216"
+"classname" "info_player_red"
+}
+{
+"origin" "750 -100 216"
+"classname" "info_player_red"
+}
+{
+"origin" "750 0 216"
+"classname" "info_player_red"
+}
+{
+"origin" "750 100 216"
+"classname" "info_player_red"
+}
+{
+"origin" "750 200 216"
+"classname" "info_player_red"
+}
+{
+"origin" "-200 625 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-300 625 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-400 625 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-500 625 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-600 625 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-200 475 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-300 475 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-400 475 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-500 475 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "-600 475 232"
+"classname" "info_player_blue"
+}
+{
+"origin" "906 -120 77"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "712 28 201"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "952 158 45"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "652 358 170"
+"angles" "0 63 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "886 359 170"
+"angles" "0 116 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "766 520 228"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "248 499 -27"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "38 355 -39"
+"angles" "0 301 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "-259 696 240"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-379 696 240"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-507 696 240"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-711 696 20"
+"angles" "0 270 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-824 347 20"
+"angles" "0 0 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-647 264 20"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-176 315 20"
+"angles" "0 180 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-283 -8 -40"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-207 -129 -40"
+"angles" "0 111 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-56 -63 -40"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-610 216 201"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-417 -89 194"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-380 -200 300"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-237 -181 194"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "630 -182 194"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "920 61 298"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "632 57 -40"
+"angles" "0 211 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "315 151 -40"
+"angles" "0 244 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "62 147 -40"
+"angles" "0 297 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "440 -98 -40"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "322 -330 -40"
+"angles" "0 296 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "322 -330 -40"
+"angles" "0 296 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "57 -330 -40"
+"angles" "0 245 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "57 -330 -40"
+"angles" "0 245 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}

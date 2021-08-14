@@ -1,0 +1,446 @@
+//DO NOT MODIFY CLIENT/RATE/CL_MAXFPS SETTINGS!!!
+//http://www.wiseup.org/tools/flagulator/
+// See www.railwarz.com for RailWarz related news and information
+//
+// Command line should be:
+// quake2.exe +set game ctf +exec railwarz.cfg
+//
+// Note that this config is ONLY for Railwarz settings
+// and does not take full advantage of TMG's CTF and DM settings
+/////////////////
+//Operator Flags/
+////////////////
+//OP_SPEC			1
+//OP_SAY			2
+//OP_SWITCH			4
+//OP_CHANGEMAP		8
+//OP_LOCKTEAMS    	16
+//OP_RESTART		32
+//OP_KICK			64
+//OP_STATUS			128
+//OP_SILENCE		256
+//OP_LOCKSERVER		512
+//OP_LISTEN			1024
+//OP_SHOWBANNEDFILE	2048
+//OP_BAN			4096
+//OP_LIGHTS			8192
+//OP_PROTECTED   		16384
+//OP_ADDOP			32768`
+//OP_MODOP			65536
+//OP_RCON			131072
+//OP_NAMEPASS		262144
+
+set hostname "Packet Flinger UK TMG Railwarz CTF"
+set _web "www.railwarz.com" 
+set _admin "" 
+set _email "" 
+set maxclients 32 
+set rcon_password "CHANGEME"
+set lan "1"
+set server_ip "172.30.10.19:27910"
+set allow_download "1"
+set allow_download_players "0"
+set allow_download_models "1"
+set allow_download_sounds "1"
+set allow_download_maps "1"
+set wavs "1"
+set song "misc/ab1.wav"
+set use_song_file 1
+set wav_random 1
+set reconnect_address ""
+set reconnect_checklevel ""
+set reconnect_time ""
+set reconnectproxyinfo ""
+set reconnectlist ""
+set dropflag_delay "0"
+set ctf "1"
+set filter "0"
+set highscores "1"
+set show_highscores "1"
+set even_teams "4"
+set clear_teams "1"
+set check_models "0"
+set server_time "1"
+set tmgclock "12"
+set allow_flagdrop "1"
+set extrasounds "1"
+set nokill "0" //1 = disables kill command
+set punish_suicide "4" //1 = reset score, 2 = respawn in base, 4 = force spec, can add 2+1
+set console_chat "1" //convert unrecognized commands in console to chat
+set no_hum "1" //turn off railgun hum
+set hook_carrierspeed "0" //hook pull speed of flag carriers if 0 set to hook_pullspeed
+set mercylimit "0" //number of caps a team must be winning by to end level
+set randomrcon "0" //if set to 1, rcon_password is changed to a random 20 digit hexadecimal string every 10 secs
+set defaultoplevel 1023 //the default operator level see above for flags
+
+//////////////////////////////////
+//  Specify RailWarz CTF server /
+////////////////////////////////
+set railserver "1"
+
+////////////////////////////////////////////////////
+// Sound settings (wavs loaded from cfg/intro.txt /
+//////////////////////////////////////////////////
+
+
+////////////////////
+// Voting options /
+//////////////////
+set mapvote "0"
+set menutime "2"
+set map_randomize "0"
+set allow_vote "1"
+set vote_percentage "40"
+set vote_timeout "25"
+
+////////////////////////////
+// Make the server public /
+//////////////////////////
+set public "0"
+
+
+///////////
+//  MOTD /
+/////////
+set motd_line "bind mouse2 +hook to enable lazer hook"
+set motd_time "2"
+
+
+/////////////////////
+// Logging options /
+///////////////////
+set logfile 3
+set stdlogfile 1
+set stdlogname "StdLog"
+set log_chat "1" //puts daily chat logs in logs subdir
+set log_connect "1" //puts connect logs in logs subdir
+
+/////////////
+// DMFlags /
+///////////
+//DF_NO_HEALTH		1
+//DF_NO_ITEMS		2
+//DF_WEAPONS_STAY		4
+//DF_NO_FALLING		8
+//DF_INSTANT_ITEMS	16
+//DF_SAME_LEVEL		32
+//DF_SKINTEAMS		64
+//DF_MODELTEAMS		128
+//DF_NO_FRIENDLY_FIRE	256
+//DF_SPAWN_FARTHEST	512
+//DF_FORCE_RESPAWN	1024
+//DF_NO_ARMOR		2048
+//DF_ALLOW_EXIT		4096
+//DF_INFINITE_AMMO	8192
+//DF_QUAD_DROP		16384
+//DF_FIXED_FOV		32768
+//set dmflags 18196
+// The default dmflags here (280084) is set up as:
+//
+//   DF_WEAPONS_STAY + DF_INSTANT_ITEMS + df_SPAWN_FARTHEST
+//   + DF_FORCE_RESPAWN + DF_QUAD_DROP + DF_ARMOR_PROTECT
+//
+// which works out to:
+//
+//   4 + 16 + 512 + 1024 + 16384 + 262144 =   280084
+
+set dmflags 264
+
+////////////////////////
+//  Time/Cap settings /
+//////////////////////
+set warmup_time "1"
+set timelimit "20"
+set capturelimit "10"
+set fraglimit "0"
+
+
+/////////////
+// Gravity /
+///////////
+set sv_gravity "800"
+
+/////////////////////////
+// Clan Tag protection /
+///////////////////////
+set clan_name ""
+set clan_pass ""
+
+///////////////////////
+//  Railgun settings /
+/////////////////////
+set railwait "11"   //18 standard
+set raildamage "900"  //100 standard
+set railkick "0"  //200 standard
+
+
+////////////////////////
+// Bandwidth settings /
+//////////////////////
+set maxfps "120"
+set maxrate "25000"
+
+//////////////////
+//Quad Settings//
+////////////////
+//quad_notify flags 
+//QUAD_NOTIFY_EXPIRE     1 
+//QUAD_NOTIFY_TAKEN     2
+//QUAD_NOTIFY_SPAWN     4
+//QUAD_NOTIFY_DROP     8
+set quad_notify "15"
+
+
+///////////////////
+// Hook Settings /
+/////////////////
+set hook_speed "1900"
+set hook_pullspeed "900"
+set hook_sky "0"
+set hook_maxtime "5"
+set hook_damage "0"
+set hook_reset "1"
+set hook_color "2"
+set use_hook "1"
+set use_grapple "0" //this currently uses laser hook model but allows people to use it with "use grapple"
+//set grapple_speed "650"
+//set grapple_pullspeed "650"
+//set grapple_damage "0" //for grapple in all-weapons mode, default to 10
+
+///////////////////
+// Bot detection /
+/////////////////
+set sv_botdetection "31"
+set speed_check "0"
+
+
+///////////////////
+// Flood control /
+/////////////////
+set flood_msgs "6"
+set flood_persecond "2"
+set flood_waitdelay "15"
+set flood_team "0" //set to "1" to mute on team chat also
+
+
+////////////////////////////////////
+// Lights and flashlight settings /
+//////////////////////////////////
+set lights_out "1"
+set flashlight "0"
+
+////////////////////////////////////
+// Locational Dammage		 /
+//////////////////////////////////
+set damage_locate "1"
+set damage_display "0"
+
+//////////////////
+// Anti-Camping /
+////////////////
+set camper_check "0"
+set camp_time "10"
+set camp_distance "256"
+set resp_protect "1"
+set hide_spawn "1"
+
+
+////////////////////
+// Reserved spots /
+//////////////////
+set reserved_slots "0"
+set reserved_password "yourreservedpassword"
+
+
+////////////////////////
+// Spectator settings /
+//////////////////////
+set max_specs "0"
+set op_specs "0"
+
+
+/////////////////
+// CTF Scoring /
+///////////////
+set cap_points "15"
+set cap_team "10"
+set recover_flag "1"
+set frag_carrier "2"
+set carrier_save "2"
+set carrier_protect "1"
+set flag_defend "1"
+set flag_assist "1"
+
+
+//////////////
+// TMGBots //
+////////////
+set use_bots "0" 
+set bot_num "4" 
+set bot_free_clients "26" 
+set chain "0" //for making routes. 
+set bot_insult "1" 
+set bot_chat "1" 
+set bot_camptime "30" 
+set bot_walkspeed "25" 
+set bot_runspeed "40" 
+set bot_duckspeed "20" 
+set bot_waterspeed "20"
+
+
+//////////////
+// Runes //
+////////////
+
+set runes "1"
+set use_runes "1"
+
+/////////////////////
+// Runes Banflags //
+///////////////////
+//
+//1 strength (like power amp)
+//2 resist (like disruptor shield)
+//4 haste (like time accelerator)
+//8 regen (like autodoc)
+//16 jump (makes you jump high)
+//32 liquid (makes water clear and can stay under without breathing, also protects you in lava)
+//64 invis (makes the player model disappear when you are standing still and not firing)
+//128 vamp (when you hit someone a portion of whatever damage you do gets added to your health)
+//256 speed (makes you go faster)
+//
+// To ban all but vampire set ban_rune 383
+
+//set ban_rune ""
+
+set auto_flag_return "10"
+
+gamemap xlctf2b
+
+
+set sv_restart
+
+set sv_filter_userinfo "1"
+
+set sv_filter_stringcmds "1"
+
+set sv_blackholes "1"
+
+set sv_allownodelta "1"
+
+set sv_iplimit "10"
+
+set sv_connectmessage "W"
+
+set sv_nc_visibilitycheck "0"
+
+set sv_max_download_size "459999999"
+
+set sv_downloadserver ""
+
+set sv_download_drop_file ""
+
+set sv_download_drop_message "Sorry, you don't have a required file. See http://CHANGEME for more info."
+
+set sv_mapdownload_ok_message ""
+
+set sv_mapdownload_denied_message "Sorry, download of a map you need to connect failed.\n See http://CHANGEME for more info."
+
+set sv_max_netdrop "20"
+
+set sv_hidestatus "0"
+
+set sv_hideplayers "0"
+
+set sv_fpsflood "250"
+
+set sv_randomframe "0"
+
+set sv_uptime "0"
+
+set sv_gamedebug "0"
+
+set sv_strafejump_hack "1"
+
+set sv_reserved_slots "0"
+
+set sv_reserved_password "l3tm3!N"
+
+set sv_allow_map "0"
+
+set sv_allow_unconnected_cmds "0"
+
+set sv_strict_userinfo_check "0"
+
+set sv_calcpings_method "2"
+set sv_no_game_serverinfo "0"
+
+set sv_ratelimit_status "10"
+
+set sv_new_entflags "0"
+
+set sv_validate_playerskins "1"
+
+set sv_idlekick "0"
+
+set sv_packetentities_hack "0"
+set sv_entity_inuse_hack "0"
+
+set sv_force_reconnect ""
+
+set sv_enforcetime "1"
+
+set sv_download_refuselimit "0"
+
+set sv_blackhole_mask "32"
+
+set sv_badcvarcheck "1"
+
+set sv_rcon_showoutput "1"
+
+set sv_show_name_changes "1"
+
+set sv_enhanced_setplayer "1"
+
+set sv_predict_on_lag "1"
+
+set sv_format_string_hack "0"
+
+set sv_lag_stats "1"
+
+set sv_max_packetdup "2"
+
+set sv_func_entities_hack "0"
+
+set net_maxmsglen "1390"
+
+set net_ignoreicmp "0"
+
+set sv_anticheat_required "0"
+
+set sv_anticheat_error_action "0"
+
+set sv_anticheat_message "no cheating please"
+
+set sv_anticheat_badfile_action "2"
+
+set sv_anticheat_badfile_message "might be cheating?"
+
+set sv_anticheat_badfile_max "0"
+
+set sv_anticheat_nag_time "0"
+
+set sv_anticheat_nag_message ""
+
+set sv_anticheat_nag_defer "0"
+
+set sv_anticheat_show_violation_reason "1"
+
+set sv_anticheat_client_disconnect_action "0"
+
+set sv_anticheat_disable_play "0"
+
+set mapqueue "maps_ffa"
+set mapvote_enable "Yes" 
+
+
