@@ -6,7 +6,7 @@
         {
             "label": "Linux - Build Docker Image",
             "type": "shell",
-            "command": "docker pull lacledeslan/steamcmd:linux; docker pull debian:stable-slim; docker build . -f linux.Dockerfile -t lltest/gamesvr-quake2 --no-cache --build-arg BUILDNODE=$env:computername;",
+            "command": "docker pull lacledeslan/steamcmd:linux; docker pull debian:buster-slim; docker build . -f linux.Dockerfile -t lltest/gamesvr-quake2 --no-cache --build-arg BUILDNODE=$env:computername;",
             "group": "build",
             "problemMatcher": [],
             "promptOnClose": true
