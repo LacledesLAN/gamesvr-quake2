@@ -1,0 +1,43 @@
+mapvote_enable "Yes" 
+
+]mapvote
+
+mapvote <mapname> at the console to initiate a vote.
+maplist to see all available maps.
+
+
+]maplist
+
+Mapnames with min/max players required. Currently 1 players connected.
+q2ctf1          lock02             2sides             jumpbch9
+q2ctf2          lock03             mcd2m1             marics_ctf3
+q2ctf3          lock04             zardoz             marics_ctf14
+q2ctf3b         purge              q2ctfw1            marics_ctf14_5
+q2ctf4          rtctf1ver2         q2ctfw2            marics_ctf18
+q2ctf4a          rtctf1a            q2ctfw3            marics_ctf21
+q2ctf5             rtctf2             q2ctfw6            xlctf2b
+q2ctf6             rtctf3             beerctf5b          xlctf3
+q2ctf7             as2m1              b4ctf              xlctf4
+q2ctf8             as2m2              b4ctfb             nandb_04
+q2ctfw4b           as2m3              b5ctf              fragtwca1
+lfctf1             as2m4              base1              b6ctf
+lfctf2             as2m6              base3              sherm_ctf7
+lfctf3             as2m7              fact3              penetrator
+lfctf4             as2m7al            mintro             pod6a
+lfctf5             as2m7rb            q2dm1              lm2rail
+lfctf6             as2m8              q2dm8ctf           b7ctf
+lfctf7             bw                 codctf3            b7beta
+lfctf8             beerctf2           q2ctf2k1           smbctf
+lfctf9             beerctf3           judctf1            smbatium
+lmctf03            sludctf1           wtfctf1a           jail1
+lmctf09            sctf2              wtfctf2a           q2ctflr3
+lfctf10            sctf4              wtfctf3a           b8beta
+lmctf11            sctf6              wtfctf4a           afctf1
+lmctf13            starctf2           wtfctf5a           afctf2a
+lmctf18            sumactf6           wtfctf6a           dgctf2
+lmctf21            ctffive            slimyctf
+lmctf22            doom2ctf           nectf1
+lmctf24            slabctf5           spazctf
+lock01             falhavn2           q2ctf05b
+
+

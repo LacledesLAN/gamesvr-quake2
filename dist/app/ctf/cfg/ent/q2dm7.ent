@@ -1,0 +1,189 @@
+:append
+{
+"origin" "563 291 216"
+"classname" "info_flag_red"
+"angle" "0 42 0"
+}
+{
+"origin" "2198 292 24"
+"classname" "info_flag_blue"
+"angle" "0 133 0"
+}
+{
+"origin" "674 465 216"
+"classname" "info_player_red"
+"angle" "3 -128 0"
+}
+{
+"origin" "695 544 216"
+"classname" "info_player_red"
+"angle" "3 -115 0"
+}
+{
+"origin" "697 606 216"
+"classname" "info_player_red"
+"angle" "3 -103 0"
+}
+{
+"origin" "681 679 216"
+"classname" "info_player_red"
+"angle" "2 -96 0"
+}
+{
+"origin" "930 376 216"
+"classname" "info_player_red"
+"angle" "1 -168 0"
+}
+{
+"origin" "833 351 216"
+"classname" "info_player_red"
+"angle" "1 -165 0"
+}
+{
+"origin" "713 318 216"
+"classname" "info_player_red"
+"angle" "1 -169 0"
+}
+{
+"origin" "857 223 168"
+"classname" "info_player_red"
+"angle" "-4 152 0"
+}
+{
+"origin" "2069 307 24"
+"classname" "info_player_blue"
+"angle" "0 -5 0"
+}
+{
+"origin" "2205 434 24"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "2207 506 24"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "2208 578 24"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "2209 638 56"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "2211 728 104"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "2213 828 152"
+"classname" "info_player_blue"
+"angle" "0 -93 0"
+}
+{
+"origin" "1872 298 24"
+"classname" "info_player_blue"
+"angle" "0 0 0"
+}
+{
+"origin" "2197 983 152"
+"classname" "info_player_blue"
+"angle" "0 -91 0"
+}
+{
+"origin" "1025 -100 152"
+"classname" "weapon_hyperblaster"
+"spawnflags" "1792"
+}
+{
+"origin" "2090 950 152"
+"classname" "weapon_rocketlauncher"
+"spawnflags" "1792"
+}
+{
+"origin" "2285 739 88"
+"classname" "weapon_grenadelauncher"
+"spawnflags" "1792"
+}
+{
+"origin" "2232 432 45"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "2040 516 13"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1830 456 -50"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1847 456 -22"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1790 456 -19"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1791 456 93"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "2171 264 43"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1784 1090 174"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "952 566 43"
+"angles" "0 180 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "711 184 157"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1039 56 154"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "892 456 18"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "520 873 20"
+"angles" "0 0 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "1269 1224 155"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}

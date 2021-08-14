@@ -1,0 +1,261 @@
+:append
+{
+"origin" "708 -960 -132"
+"classname" "info_flag_red"
+}
+{
+"origin" "404 -960 152"
+"classname" "info_flag_blue"
+}
+{
+"origin" "-450 -50 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-350 -50 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-250 -50 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-150 -50 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-50 -50 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-450 -1850 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-350 -1850 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-250 -1850 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-150 -1850 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "-50 -1850 -80"
+"classname" "info_player_red"
+}
+{
+"origin" "150 -500 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -600 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -700 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -800 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -900 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -1000 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -1100 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -1200 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -1300 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "150 -1400 152"
+"classname" "info_player_blue"
+}
+{
+"origin" "-98 -2050 -72"
+"classname" "item_quad"
+"spawnflags" "1792"
+}
+{
+"origin" "-98 150 -72"
+"classname" "item_health_mega"
+"spawnflags" "1792"
+}
+{
+"origin" "-652 -972 400"
+"classname" "item_health_mega"
+"spawnflags" "1792"
+}
+{
+"origin" "-432 -1915 -88"
+"classname" "item_armor_combat"
+"spawnflags" "1792"
+}
+{
+"origin" "-432 6 -88"
+"classname" "item_armor_combat"
+"spawnflags" "1792"
+}
+{
+"origin" "692 -1176 -176"
+"classname" "weapon_hyperblaster"
+"spawnflags" "1792"
+}
+{
+"origin" "692 -739 -176"
+"classname" "weapon_rocketlauncher"
+"spawnflags" "1792"
+}
+{
+"origin" "-617 -970 148"
+"classname" "weapon_railgun"
+"spawnflags" "1792"
+}
+{
+"origin" "536 -1213 -176"
+"classname" "ammo_cells"
+"spawnflags" "1792"
+}
+{
+"origin" "536 -1132 -176"
+"classname" "ammo_cells"
+"spawnflags" "1792"
+}
+{
+"origin" "536 -821 -176"
+"classname" "ammo_rockets"
+"spawnflags" "1792"
+}
+{
+"origin" "536 -751 -176"
+"classname" "ammo_rockets"
+"spawnflags" "1792"
+}
+{
+"origin" "-618 -480 148"
+"classname" "ammo_slugs"
+"spawnflags" "1792"
+}
+{
+"origin" "-618 -560 148"
+"classname" "ammo_slugs"
+"spawnflags" "1792"
+}
+{
+"origin" "-295 -707 148"
+"classname" "item_health_large"
+}
+{
+"origin" "428 -851 148"
+"classname" "item_health_large"
+}
+{
+"origin" "428 -1063 148"
+"classname" "item_health_large"
+}
+{
+"origin" "688 -667 -176"
+"classname" "item_health_large"
+}
+{
+"origin" "688 -1235 -176"
+"classname" "item_health_large"
+}
+{
+"origin" "315 -738 140"
+"angles" "0 180 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "315 -1215 140"
+"angles" "0 180 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "464 -959 224"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "301 -962 379"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-448 -164 100"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "-448 -1756 100"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "-564 -14 -80"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "-564 -1905 -80"
+"angles" "0 0 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "664 -926 -31"
+"angles" "0 0 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "843 -755 -150"
+"angles" "0 225 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "846 -1170 -150"
+"angles" "0 135 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "816 -1663 -50"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "816 -300 -50"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "462 0 -95"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "433 -1610 -95"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+}
+
