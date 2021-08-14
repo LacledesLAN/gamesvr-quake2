@@ -6,7 +6,7 @@ Quake II is a first-person shooter video game released in December 1997. It is n
 
 This repository is maintained by [Laclede's LAN](https://lacledeslan.com). Its contents are intended to be a basic server. For examples of building a customized server from this Docker image browse its related child-project [gamesvr-quake2-freeplay](https://github.com/LacledesLAN/gamesvr-quake2-freeplay). If any documentation is unclear or it has any issues please see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-This docker image contains the original server software along with both 32 and 64 versions of [Q2PRO](https://github.com/skullernet/q2pro) for extra functionatlity and troubleshooting. Also included are compiled versions of [ctf for yquake 2](https://github.com/yquake2/ctf) and [OpenRocket Arena 2 by packetflinger](https://github.com/packetflinger/openra2).
+This docker image contains the original server software along with both 32 and 64 versions of [Q2PRO](https://github.com/skullernet/q2pro) for extra functionatlity and troubleshooting. Also included are compiled versions of [TMG/railwars CTF](https://github.com/QwazyWabbitWOS/tmg), [OpenFFA](https://github.com/skullernet/openffa), [OpenTDM](https://github.com/skullernet/opentdm),[Lithium](https://github.com/QwazyWabbitWOS/lithium),   and [OpenRocket Arena 2 by packetflinger](https://github.com/packetflinger/openra2).
 
 ## Linux
 

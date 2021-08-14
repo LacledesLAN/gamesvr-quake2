@@ -1,0 +1,257 @@
+:append
+{
+"origin" "1697 -1577 -168"
+"classname" "info_flag_red"
+}
+{
+"origin" "2124 82 -40"
+"classname" "info_flag_blue"
+}
+{
+"origin" "1050 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1150 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1250 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1350 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1450 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1950 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "2050 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "2150 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "2250 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "2350 -1350 -232"
+"classname" "info_player_red"
+}
+{
+"origin" "1400 -100 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1500 -100 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1600 -100 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1700 -100 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1800 -100 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1400 300 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1500 300 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1600 300 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1700 300 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1800 300 -232"
+"classname" "info_player_blue"
+}
+{
+"origin" "1693 -320 -240"
+"classname" "item_quad"
+"spawnflags" "1792"
+}
+{
+"origin" "3904 700 -376"
+"classname" "item_health_mega"
+"spawnflags" "1792"
+}
+{
+"origin" "3645 700 -376"
+"classname" "item_armor_combat"
+"spawnflags" "1792"
+}
+{
+"origin" "2302 -1386 -240"
+"classname" "weapon_hyperblaster"
+"spawnflags" "1792"
+}
+{
+"origin" "1102 1381 -240"
+"classname" "weapon_railgun"
+"spawnflags" "1792"
+}
+{
+"origin" "1089 -1394 -240"
+"classname" "weapon_railgun"
+"spawnflags" "1792"
+}
+{
+"origin" "1613 1055 -176"
+"classname" "weapon_chaingun"
+"spawnflags" "1792"
+}
+{
+"origin" "1944 -1250 -368"
+"classname" "weapon_chaingun"
+"spawnflags" "1792"
+}
+{
+"origin" "1561 -1718 -176"
+"classname" "weapon_machinegun"
+"spawnflags" "1792"
+}
+{
+"origin" "1988 397 -48"
+"classname" "weapon_supershotgun"
+"spawnflags" "1792"
+}
+{
+"origin" "1810 -1722 -176"
+"classname" "weapon_supershotgun"
+"spawnflags" "1792"
+}
+{
+"origin" "1873 -1449 -368"
+"classname" "ammo_slugs"
+"spawnflags" "1792"
+}
+{
+"origin" "1450 -953 -368"
+"classname" "ammo_slugs"
+"spawnflags" "1792"
+}
+{
+"origin" "2099 -890 -368"
+"classname" "ammo_bullets"
+"spawnflags" "1792"
+}
+{
+"origin" "2180 -890 -368"
+"classname" "ammo_bullets"
+"spawnflags" "1792"
+}
+{
+"origin" "1281 -890 -368"
+"classname" "ammo_bullets"
+"spawnflags" "1792"
+}
+{
+"origin" "1185 -890 -368"
+"classname" "ammo_bullets"
+"spawnflags" "1792"
+}
+{
+"origin" "2158 207 -48"
+"classname" "item_health_large"
+}
+{
+"origin" "2158 -41 -48"
+"classname" "item_health_large"
+}
+{
+"origin" "2183 -1015 -400"
+"classname" "item_health_large"
+}
+{
+"origin" "1224 -1601 -205"
+"angles" "0 0 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "2168 -1603 -205"
+"angles" "0 180 0"
+"classname" "misc_ctf_banner"
+}
+{
+"origin" "1992 -1464 -225"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1399 -1464 -225"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1412 -984 -375"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1985 -984 -375"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1696 -376 -243"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+}
+{
+"origin" "1224 93 -144"
+"angles" "0 0 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1556 376 -170"
+"angles" "0 270 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1514 -184 -160"
+"angles" "0 90 0"
+"classname" "misc_ctf_banner"
+"spawnflags" "1"
+}
+{
+"origin" "2168 84 -34"
+"angles" "0 180 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1689 520 -75"
+"angles" "0 90 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}
+{
+"origin" "1685 -264 -114"
+"angles" "0 270 0"
+"classname" "misc_ctf_small_banner"
+"spawnflags" "1"
+}

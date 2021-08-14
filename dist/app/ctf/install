@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ -f q2admin.so ];
+then
+	mv gamei386.so gamei386.real.so
+	mv q2admin.so gamei386.so
+	echo "Installed"
+else
+if [ -f gamei386.real.so ];
+then
+	mv gamei386.so q2admin.so
+	mv gamei386.real.so gamei386.so
+	echo "UnInstalled"
+else
+	echo "q2admin.so not found"
+fi
+fi
