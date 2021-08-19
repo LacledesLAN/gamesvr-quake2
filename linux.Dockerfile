@@ -15,7 +15,7 @@ RUN echo "\nDownloading installer from $contentServer" &&`
         curl "http://content.lacledeslan.net/fastDownloads/_installers/q2proded-64" -o /output/q2pro_server_x64
 
 #=======================================================================`
-FROM debian:buster-slim
+FROM debian:stable-slim
 
 ARG BUILDNODE=unspecified
 ARG SOURCE_COMMIT=unspecified
@@ -26,7 +26,7 @@ EXPOSE 27910/udp
 
 RUN dpkg --add-architecture i386 &&`
     apt-get update && apt-get install -y `
-        glib2.0 lib32gcc1 locales locales-all tmux zlib1g:i386 zlib1g &&`
+        glib2.0 lib32gcc-s1 locales locales-all tmux zlib1g:i386 zlib1g &&`
     apt-get clean &&`
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*;
 
