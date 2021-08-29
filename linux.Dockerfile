@@ -26,7 +26,7 @@ EXPOSE 27910/udp
 
 RUN dpkg --add-architecture i386 &&`
     apt-get update && apt-get install -y `
-        glib2.0 lib32gcc1 locales locales-all tmux zlib1g:i386 zlib1g &&`
+        glib2.0 lib32gcc-s1 locales locales-all tmux zlib1g:i386 zlib1g &&`
     apt-get clean &&`
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*;
 
