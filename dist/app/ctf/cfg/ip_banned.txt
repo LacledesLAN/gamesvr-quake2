@@ -1,6 +1,0 @@
-addhole 24.90.88.0/24 SILENT Vapid and the bot.
-addhole 65.32.119.0/24 SILENT zeb0r and the bot.
-addhole 24.193.213.0/24 SILENT Vapid and the bot.
-addhole 67.110.149.132/24 SILENT Vapid bots
-addhole 67.8.113.210/24 SILENT zeb0r bots
-

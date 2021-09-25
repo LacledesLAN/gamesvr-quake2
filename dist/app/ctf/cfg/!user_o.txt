@@ -1,1 +1,0 @@
-superuser@*.*.*.*	524287	superpass
