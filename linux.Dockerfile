@@ -15,7 +15,7 @@ RUN echo "\nDownloading installer from $contentServer" &&`
         curl "http://content.lacledeslan.net/fastDownloads/_installers/q2proded-64" -o /output/q2pro_server_x64
 
 #=======================================================================`
-FROM debian:stable-slim
+FROM debian:bullseye-slim
 
 ARG BUILDNODE=unspecified
 ARG SOURCE_COMMIT=unspecified
