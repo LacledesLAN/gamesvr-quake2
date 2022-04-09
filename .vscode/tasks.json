@@ -40,6 +40,20 @@
             "group": "build",
             "problemMatcher": [],
             "promptOnClose": true
+        },
+        {
+            "label": "Download git submodules",
+            "type": "shell",
+            "command": "git submodule foreach git pull origin master;",
+            "problemMatcher": [],
+            "promptOnClose": true
+        },
+        {
+            "label": "Update git submodules",
+            "type": "shell",
+            "command": "git submodule update --recursive --remote;",
+            "problemMatcher": [],
+            "promptOnClose": true
         }
     ]
 }

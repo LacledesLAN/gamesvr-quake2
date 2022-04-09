@@ -1,0 +1,3 @@
+[submodule "sources/q2pro"]
+	path = sources/q2pro
+	url = https://github.com/skullernet/q2pro
