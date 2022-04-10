@@ -2,7 +2,7 @@ name: linux/amd64
 
 on:
   schedule:
-    - cron: '0 8 * * THU'
+    - cron: '0 6 1 * *'
   push:
     branches: [ master ]
   pull_request:
