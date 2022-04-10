@@ -3,6 +3,6 @@
 .vscode
 Documentation
 source\q2pro\.ci
-source\q2pro\doc
 source\q2pro\.github
+source\q2pro\doc
 source\q2pro\man

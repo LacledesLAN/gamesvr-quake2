@@ -1,7 +1,5 @@
 # escape=`
 
-# Compile Q2PRO
-
 FROM debian:bullseye-slim as q2pro-builder
 
 RUN apt-get update && apt-get install -y `
@@ -13,11 +11,9 @@ COPY sources/.config /q2pro
 
 WORKDIR /q2pro
 
-RUN make strip
+RUN make clean; make strip
 
 #=======================================================================`
-
-# Download Q2 Dedicated Stock Server
 
 FROM lacledeslan/steamcmd:linux as q2-downloader
 
@@ -31,8 +27,6 @@ RUN echo "\nDownloading installer from $contentServer" &&`
         tar -xvjf /tmp/quake2.tar.bz2 --directory /output;
 
 #=======================================================================`
-
-# Build final image
 
 FROM debian:bullseye-slim
 
