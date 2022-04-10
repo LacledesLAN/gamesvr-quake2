@@ -2,7 +2,7 @@
 .misc
 .vscode
 Documentation
-source/q2pro/.ci
-source/q2pro/.github
-source/q2pro/doc
-source/q2pro/man
+sources/q2pro/.ci
+sources/q2pro/.github
+sources/q2pro/doc
+sources/q2pro/man
