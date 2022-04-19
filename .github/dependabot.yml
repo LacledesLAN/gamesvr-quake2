@@ -12,5 +12,12 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      time: "11:00"
+
+  # Check for submodule updates
+  - package-ecosystem: "gitsubmodule"
+    directory: "/sources"
+    schedule:
+      interval: "weekly"
       time: "11:00"
